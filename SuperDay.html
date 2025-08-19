@@ -1,0 +1,3562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karla & Lalo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Patrick+Hand&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carme&family=Chewy&family=Gaegu&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    @import url('https://fonts.cdnfonts.com/css/bubbleboddy-neue-trial');
+
+    body {
+        background-color: #f6f6f6;
+        margin: 0px;
+    }
+
+    .sakura {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+        overflow: hidden;
+    }
+
+    .sakura span {
+        position: absolute;
+        top: -10%;
+        width: 15px;
+        /* tamaño base del pétalo */
+        height: 12px;
+        background: #ffb6c1;
+        /* rosa claro */
+        border-radius: 70% 30% 70% 30%;
+        /* forma irregular */
+        opacity: 0.9;
+        animation: fall 8s linear infinite, sway 3s ease-in-out infinite;
+    }
+
+    /* Cada pétalo en posiciones distintas */
+    .sakura span:nth-child(1) {
+        left: 5%;
+        animation-delay: 0s;
+    }
+
+    .sakura span:nth-child(2) {
+        left: 15%;
+        animation-delay: 2s;
+    }
+
+    .sakura span:nth-child(3) {
+        left: 25%;
+        animation-delay: 4s;
+    }
+
+    .sakura span:nth-child(4) {
+        left: 35%;
+        animation-delay: 1s;
+    }
+
+    .sakura span:nth-child(5) {
+        left: 50%;
+        animation-delay: 3s;
+    }
+
+    .sakura span:nth-child(6) {
+        left: 65%;
+        animation-delay: 5s;
+    }
+
+    .sakura span:nth-child(7) {
+        left: 75%;
+        animation-delay: 1.5s;
+    }
+
+    .sakura span:nth-child(8) {
+        left: 85%;
+        animation-delay: 2.5s;
+    }
+
+    .sakura span:nth-child(9) {
+        left: 90%;
+        animation-delay: 4.5s;
+    }
+
+    .sakura span:nth-child(10) {
+        left: 98%;
+        animation-delay: 6s;
+    }
+
+    /* Animación de caída */
+    @keyframes fall {
+        0% {
+            top: -10%;
+            transform: rotate(0deg);
+        }
+
+        100% {
+            top: 100%;
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Animación de vaivén lateral */
+    @keyframes sway {
+        0% {
+            transform: translateX(0) rotate(0deg);
+        }
+
+        50% {
+            transform: translateX(30px) rotate(45deg);
+        }
+
+        100% {
+            transform: translateX(-30px) rotate(90deg);
+        }
+    }
+
+
+
+    table {
+        width: 100%;
+    }
+
+    H1,
+    H2,
+    H3 {
+        font-family: 'Gaegu' !important;
+    }
+
+    p,
+    a,
+    input,
+    label {
+        font-family: 'Carme' !important;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+
+
+    /* CONTENIDO DEL HEADER */
+    .MainTable {
+        width: 100%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        /*background-color: #395a9d; */
+        background-image: url(./Fondo\ Nubes.png);
+        background-repeat: no-repeat;
+        background-size: 100% 75%;
+        background-position: center;
+        background-color: white;
+    }
+
+    .TableHeader {
+        width: 100%;
+        text-align: center;
+    }
+
+    .Nombres,
+    .countdown-container {
+
+        animation: slideUp 0.6s ease-out forwards;
+    }
+
+    .ContainersHeaderP {
+        width: 25%;
+    }
+
+    .ContainersHeaderIMG {
+        width: 50%;
+    }
+
+    .Left,
+    .Right,
+    .IMGHeader {
+        opacity: 0;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    .Left {
+        animation-name: slideInLeft;
+        animation-delay: 0.3s;
+
+    }
+
+    .Right {
+        animation-name: slideInRight;
+        animation-delay: 0.3s;
+        /* para un pequeño desfase opcional */
+    }
+
+    .IMGHeader {
+        animation-name: slideInDown;
+    }
+
+    .TextoHeader {
+        animation-name: slideInDown;
+    }
+
+
+    @keyframes slideInLeft {
+        from {
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            transform: translateX(100px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInDown {
+        from {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInDown {
+        from {
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+
+    /* Entra desde abajo hacia arriba */
+    @keyframes slideUp {
+        from {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+
+
+
+    .TextoHeader1 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 10px;
+    }
+
+    .TextoHeader {
+        font-family: "Montserrat", sans-serif;
+        font-size: 10px;
+    }
+
+    .IMGHeader {
+        width: 100%;
+    }
+
+    .MainTxt {
+        font-family: "Lato", sans-serif;
+        font-size: 70px;
+        color: #e473b1;
+        margin: 0px;
+        font-weight: bold;
+        word-break: break-word;
+    }
+
+    .colmask {
+        position: relative;
+        overflow: hidden;
+        margin: 0px auto;
+        width: 100%;
+    }
+
+    .header {
+        float: left;
+        width: 100%;
+    }
+
+    .colmid {
+        position: relative;
+        width: 100%;
+        right: 25%;
+    }
+
+    .colleft {
+        position: relative;
+        width: 100%;
+        right: 50%;
+    }
+
+    .Middle {
+        position: relative;
+        overflow: hidden;
+        float: left;
+        width: 48%;
+        left: 101%;
+    }
+
+    .Left {
+        position: relative;
+        overflow: hidden;
+        float: left;
+        width: 24%;
+        left: 26%;
+    }
+
+    .ImagenIzquierda {
+        width: 100%;
+    }
+
+    .ImagenDerecha {
+        width: 100%;
+    }
+
+    .Right {
+        position: relative;
+        overflow: hidden;
+        float: left;
+        width: 24%;
+        left: 80%;
+    }
+
+
+    /* CONTENIDO DEL CONTADOR */
+
+    .TableCounter {
+        width: 100%;
+        text-align: center;
+        background-color: #ffffff;
+    }
+
+    .countdown-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        font-family: Arial, sans-serif;
+        margin: 15% auto;
+        padding: 10% 0;
+        border-bottom: 5px solid #fcc85e;
+        border-top: 5px solid #fcc85e;
+    }
+
+    .countdown-item {
+        text-align: center;
+    }
+
+    .countdown-item span {
+        display: block;
+        font-size: 4em;
+        /* Size of the numbers */
+        font-weight: bold;
+        color: #e196bf;
+        margin-bottom: 5px;
+    }
+
+    .countdown-item .label {
+        font-size: 0.9em;
+        color: #e196bf;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    /* Example of how to add a separator if desired */
+    /* .countdown-item:not(:last-child)::after {
+  content: ":";
+  font-size: 3em;
+  color: #333;
+  margin-left: 20px;
+} */
+
+
+
+    /* CONTENIDO DEL SUBMENU */
+
+    .TableSubmenu {
+        width: 100%;
+        text-align: center;
+        background-color: #395a9d;
+    }
+
+    .Submenu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-family: Arial, sans-serif;
+        padding: 30px;
+    }
+
+    .DivsMenu {
+        width: 25%;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+        letter-spacing: 0.3em;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+    }
+
+    a:hover {
+        color: #fcc85e;
+        font-size: 20px;
+        letter-spacing: 0.4em;
+    }
+
+
+    /* CONTENIDO DEL H1 CAROUSEL */
+
+    .TableH1 {
+        text-align: center;
+        width: 100%;
+    }
+
+
+    h1 {
+        font-family: "Montserrat", sans-serif;
+        color: #e473b1;
+        font-size: 50px;
+
+    }
+
+
+    /* CONTENIDO DEL CAROUSEL */
+
+
+    .ie-radio-check {
+        display: inline-block;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        margin: 0;
+        margin: 0 0 0 -9999px;
+        float: left;
+        position: absolute;
+        -webkit-appearance: none;
+    }
+
+    input:checked~.ie-carousel {
+        display: block !important;
+    }
+
+    input:checked~.ie-carouselFallback {
+        display: none;
+    }
+
+    .mc-carousel-id-1751619445451 {
+        text-align: center;
+    }
+
+    .mc-carousel-id-1751619445451 .ie-carousel-wrap {
+
+        margin: 0 auto
+    }
+
+    .ie-carousel-wrap {
+        position: relative;
+    }
+
+    .ie-carousel input:focus~.ie-thumb {
+        outline: Highlight auto 2px;
+        outline: -webkit-focus-ring-color auto 5px;
+        outline-offset: 3px;
+    }
+
+    .ie-slide {
+        width: 100%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+    }
+
+    .mc-carousel-id-1751619445451 .ie-slide {
+        padding-bottom: 41.66666666666667%;
+    }
+
+    .ie-thumb {
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 50%;
+        margin: .3em .1em;
+        display: inline-block;
+        border: .1em solid;
+    }
+
+    .ie-carousel:not(:has(input:checked)) .ie-start~.ie-thumb {
+        background: currentColor;
+    }
+
+    input:checked~.ie-thumb {
+        background: #e473b1 !important;
+    }
+
+    .ie-pos-arrow {
+        max-height: 0;
+        text-align: left;
+    }
+
+    .ie-arrow {
+        display: inline-block;
+        max-height: 0;
+        max-width: 0;
+        border: 1em solid transparent;
+        border-right-color: currentColor;
+        border-left-width: 0;
+        opacity: 0.99;
+        position: relative;
+        vertical-align: middle;
+        margin: 0 5% 0 .2em;
+        color: #e473b1;
+        ;
+    }
+
+    .mc-carousel-id-1751619445451 .ie-arrow-padding {
+        display: inline-block;
+        vertical-align: middle;
+        padding-bottom: 41.66666666666667%;
+        width: 0px;
+    }
+
+    .ie-apple-clickarea {
+        height: 200px;
+        width: 3em;
+        width: clamp(45px, 3em, 70px);
+        float: left;
+        transform: translate(-5px, -50%);
+    }
+
+    .mc-carousel-id-1751619445451 input:checked~* .ie-pos-arrow,
+    .ie-start {
+        text-align: right;
+    }
+
+    .mc-carousel-id-1751619445451 input:checked~* .ie-pos-arrow .ie-apple-clickarea,
+    .ie-start .ie-apple-clickarea {
+        float: right;
+        transform: translate(5px, -50%);
+    }
+
+    .mc-carousel-id-1751619445451 input:checked~* .ie-arrow,
+    .ie-start .ie-arrow {
+        border-right-width: 0;
+        border-left: 1em solid;
+        margin: 0 .2em 0 5%;
+    }
+
+    .mc-carousel-id-1751619445451 input:checked~.ie-start~* .ie-end {
+        display: block;
+        text-align: left;
+    }
+
+    .mc-carousel-id-1751619445451 input:checked~.ie-start~* .ie-end .ie-arrow {
+        border-left-width: 0;
+        border-right: 1em solid;
+        margin: 0 5% 0 .2em;
+    }
+
+    .mc-carousel-id-1751619445451 input:checked+.ie-pos-arrow,
+    .mc-carousel-id-1751619445451 input:checked~label label .ie-pos-arrow {
+        display: none;
+    }
+
+    .mc-carousel-id-1751619445451 input:checked~.ie-start~* .ie-end .ie-arrow .ie-apple-clickarea {
+        float: left;
+        transform: translate(-5px, -50%);
+    }
+
+    .ie-img-wrap {
+        display: none;
+    }
+
+    .ie-carousel .ie-mid .ie-img1 {
+        display: block;
+        position: initial;
+    }
+
+    .mc-carousel-id-1751619445451 input:checked~label .ie-mid .ie-img1 {
+        display: none;
+    }
+
+
+    .mc-carousel-id-1751619445451 input:checked+.ie-img1~* .ie-mid .ie-img1,
+    .mc-carousel-id-1751619445451 input:checked+.ie-img2~* .ie-mid .ie-img2,
+    .mc-carousel-id-1751619445451 input:checked+.ie-img3~* .ie-mid .ie-img3,
+    .mc-carousel-id-1751619445451 input:checked+.ie-img4~* .ie-mid .ie-img4 {
+        display: block;
+    }
+
+    .mc-carousel-id-1751619445451 input:checked~.ie-end {
+        display: none;
+    }
+
+
+    input:checked+.mc-carousel-id-1751619445451 .ie-img1 span {
+        background-image: url(./01.gif)
+    }
+
+    input:checked+.mc-carousel-id-1751619445451 .ie-img2 span {
+        background-image: url(./02.gif);
+    }
+
+    input:checked+.mc-carousel-id-1751619445451 .ie-img3 span {
+        background-image: url(./03.gif);
+    }
+
+    input:checked+.mc-carousel-id-1751619445451 .ie-img4 span {
+        background-image: url(./04.gif);
+    }
+
+    .ie-carousel {
+        direction: rtl;
+    }
+
+    .ie-carousel label {
+        direction: ltr;
+    }
+
+    .ie-arrow-wrap {
+        display: table;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .ie-arrow-wrap:hover .ie-arrow {
+        transform: scale(1.1);
+    }
+
+    @supports (animation: carousel-anim) and (position: absolute) {
+        .mc-carousel-id-1751619445451 .ie-img-wrap {
+            animation: mc-carousel-id-1751619445451-anim 37.5s infinite;
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        .ie-mid {
+            position: relative;
+        }
+
+        .mc-carousel-id-1751619445451 .ie-img1 {
+            animation-delay: -37.5s
+        }
+
+        .mc-carousel-id-1751619445451 .ie-img2 {
+            animation-delay: -30s
+        }
+
+        .mc-carousel-id-1751619445451 .ie-img3 {
+            animation-delay: -22.5s
+        }
+
+        .mc-carousel-id-1751619445451 .ie-img4 {
+            animation-delay: -15s
+        }
+
+        .ie-arrow {
+            z-index: 2;
+        }
+
+        .mc-carousel-id-1751619445451 input:checked~* .ie-img-wrap {
+            position: initial;
+            display: none;
+            animation: none;
+        }
+
+        @keyframes mc-carousel-id-1751619445451-anim {
+            0% {
+                z-index: 1;
+                opacity: 1;
+            }
+
+            19% {
+                opacity: 1;
+            }
+
+            20% {
+                z-index: 1;
+            }
+
+            21% {
+                z-index: 0;
+                opacity: 0;
+            }
+
+            99% {
+                z-index: 0;
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1
+            }
+        }
+
+        .mc-carousel-id-1751619445451:has(input) .ie-thumb {
+            animation-name: mc-carousel-id-1751619445451-thumb;
+            animation-duration: 37.5s;
+            animation-iteration-count: infinite;
+            background: currentColor;
+        }
+
+        .mc-carousel-id-1751619445451:has(input:checked) .ie-thumb {
+            animation: none;
+            background: none;
+        }
+
+        @keyframes mc-carousel-id-1751619445451-thumb {
+
+            0%,
+            100% {
+                background: currentColor;
+            }
+
+            20% {
+                background: currentColor;
+            }
+
+            21%,
+            99% {
+                background: none;
+            }
+        }
+    }
+
+    @media (prefers-reduced-motion) {
+        .ie-img-wrap {
+            position: initial;
+            display: none;
+            animation: none;
+        }
+    }
+
+    .& .ie-carousel input:focus~.ie-thumb {
+        outline: Highlight auto 5px;
+    }
+
+
+    .TextoDondeCuando {
+        padding: 0% 15% 0 15%;
+    }
+
+
+    /*PUSHEEN*/
+
+    .PusheenDiv {
+        position: relative;
+    }
+
+    .PusheenIMG {
+        position: absolute;
+        width: 10%;
+        left: 0px;
+    }
+
+
+
+    .MalteseDiv {}
+
+    .MalteseIMG {
+        width: 15%;
+    }
+
+
+    /* SELLOS */
+    .SellosTable {
+        width: 100%;
+    }
+
+    .Sellos {
+        background-image: url(./Sellos.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 115% 90%;
+        height: 800px;
+    }
+
+    .H1Sellos {
+        padding: 5% 15%;
+        font-size: 80px;
+    }
+
+    h2 {
+        color: white;
+        font-size: 50px;
+        font-family: "Montserrat", sans-serif;
+        display: inline;
+        position: absolute;
+    }
+
+    .H2Donde {
+        margin: 0% 0 2% 2%;
+    }
+
+    .H2Cuando {
+        margin: 0% 0 2% 2%;
+    }
+
+    h2 span {
+        font-size: 30px;
+    }
+
+
+    /* FICHAS */
+
+    .Fichas,
+    .FichasII {
+        background-color: #395a9d;
+    }
+
+
+
+    h3 {
+        font-size: 30px;
+        font-family: "Montserrat", sans-serif;
+        text-align: center;
+        color: white;
+        margin: 3% 6%;
+    }
+
+    .DivIMG {
+        text-align: center;
+        width: 200px;
+        background: #ffffff;
+        border-radius: 10%;
+        padding: 5%;
+    }
+
+
+    .FichasIMG {
+        width: 65%;
+        border-radius: 6px;
+    }
+
+
+    .TdFichas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;
+    }
+
+    .TextoFichas {
+        color: #e473b1;
+        margin: 0px;
+        font-weight: bold;
+    }
+
+
+
+    .SVGAlojamiento1,
+    .SVGAlojamiento2 {
+        top: 0;
+        left: 0;
+        width: 200px;
+        transition: opacity 0.3s ease;
+    }
+
+    .SVGAlojamiento2 {
+        opacity: 0;
+        /* oculto por defecto */
+        display: contents;
+    }
+
+    .DivIMG:hover .SVGAlojamiento1 {
+        opacity: 0;
+        display: contents;
+        /* al hacer hover, se oculta */
+    }
+
+    .DivIMG:hover .SVGAlojamiento2 {
+        opacity: 1;
+        display: block;
+        /* al hacer hover, se muestra */
+    }
+
+    /* MONEDAS */
+
+    .Monedas {
+        text-align: center;
+        background-color: #395a9d;
+        margin: 5% 0;
+        background-image: url(./Mapa.png);
+    }
+
+    .TextoMonedas {
+        margin: 3% 6%;
+        font-size: 24px;
+        font-family: "Montserrat", sans-serif;
+        text-align: center;
+        color: white;
+        font-weight: 600;
+        line-height: 170%;
+    }
+
+
+    .Cuenta {
+        background-color: #fdf5e5;
+        margin: 6% 6%;
+        border-radius: 10px;
+        width: 75%;
+    }
+
+    .TextoCuenta {
+        font-size: 24px;
+        font-family: "Montserrat", sans-serif;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        letter-spacing: 6px;
+    }
+
+    .TextoCuenta span {
+        font-weight: 700;
+    }
+
+    .TDCuenta {
+        display: flex;
+        justify-content: center;
+    }
+
+
+    /* FORMULARIO */
+
+    .MainTxtFormulario {
+        color: white;
+        font-size: 18px;
+        margin: 0px;
+        font-weight: bold;
+        word-break: break-word;
+        text-align: justify;
+    }
+
+    .Forumulario {
+        width: 100%;
+    }
+
+    .LeftFormulario,
+    .RightFormulario {
+        width: 24%;
+        flex-shrink: 0;
+    }
+
+    .MiddleFormulario {
+        flex-grow: 1;
+        padding: 0 10px;
+        z-index: 1;
+        margin: 0 -13%;
+    }
+
+    .colleftFormulario {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .BloqueFormulario {
+        width: 100%;
+        margin: 6% 0;
+    }
+
+    form {
+        background-color: #ffffff;
+        margin: 5% auto;
+        padding: 3% 5%;
+        border-radius: 10px;
+        font-family: 'Carme' !important;
+        color: #395a9d;
+        font-weight: 800;
+        font-size: 22px;
+        max-width: 600px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    form p {
+        font-size: 26px;
+        margin-top: 0px;
+        margin-bottom: 25px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .Codigo {
+        display: block;
+        font-size: 18px;
+        color: #fcc85e;
+        margin-bottom: 8px;
+        font-family: "montserrat";
+        font-weight: 600;
+        margin: 0 3%;
+    }
+
+    #CodigoRSVP {
+        height: 35px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+        font-size: 16px;
+        font-weight: 500;
+        box-sizing: border-box;
+        margin: 1% 3%;
+    }
+
+    input[type="radio"] {
+        margin-right: 10px;
+        transform: scale(1.3);
+        cursor: pointer;
+    }
+
+    .checkbox-group {
+        display: flex;
+        gap: 20%;
+        align-items: center;
+        margin: 5% auto;
+        justify-content: center;
+    }
+
+    input[type="text"]:not(#CodigoRSVP),
+    input.Text {
+        width: 100%;
+        height: 35px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+        font-size: 16px;
+        font-weight: 500;
+        box-sizing: border-box;
+    }
+
+
+
+
+    /*
+    .colmaskFormulario {
+        position: relative;
+        overflow: hidden;
+        margin: 0px auto;
+        width: 100%;
+    }
+
+    .colmidFormulario {
+        position: relative;
+        width: 100%;
+        right: 25%;
+        background-color: #b4d2f7;
+    }
+
+    .colleftFormulario {
+        position: relative;
+        width: 100%;
+        right: 50%;
+        background-color: #b4d2f7;
+    }
+
+    .MiddleFormulario {
+        position: relative;
+        overflow: hidden;
+        float: left;
+        width: 48%;
+        left: 101%;
+    }
+
+    .LeftFormulario {
+        position: relative;
+        overflow: hidden;
+        float: left;
+        width: 24%;
+        left: 26%;
+        background-color: #ffffff;
+        animation-name: slideInLeft;
+        animation-delay: 0.3s;
+        opacity: 0;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    .RightFormulario{
+        position: relative;
+        overflow: hidden;
+        float: left;
+        width: 24%;
+        left: 80%;
+        background-color: #ffffff;
+        animation-name: slideInRight;
+        animation-delay: 0.3s;
+        opacity: 0;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    */
+
+
+
+    /* BOTON FORMULARIO*/
+
+    .cta {
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .cta span {
+        padding-bottom: 7px;
+        letter-spacing: 4px;
+        font-size: 14px;
+    }
+
+    .cta svg {
+        transform: translateX(-8px);
+        transition: all 0.3s ease;
+    }
+
+    .cta svg path {
+        fill: #395a9d;
+    }
+
+    .cta:hover svg {
+        transform: translateX(0);
+    }
+
+    .cta:active svg {
+        transform: scale(0.9);
+    }
+
+    .hover-underline-animation {
+        position: relative;
+        color: #395a9d;
+        padding-bottom: 20px;
+    }
+
+    .hover-underline-animation:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #395a9d;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+    .cta:hover .hover-underline-animation:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+
+    button:not(.cta) {
+        font-family: 'Carme';
+        font-weight: bold;
+        font-size: 1em;
+        background: royalblue;
+        color: white;
+        padding: 0.2em 0.9em;
+        padding-left: 0.9em;
+        display: flex;
+        align-items: center;
+        border: none;
+        border-radius: 16px;
+        overflow: hidden;
+        transition: all 0.2s;
+        cursor: pointer;
+    }
+
+    button span:not(.hover-underline-animation) {
+        display: block;
+        margin-left: 0.3em;
+        transition: all 0.3s ease-in-out;
+    }
+
+    button svg:not(#arrow-horizontal) {
+        display: block;
+        transform-origin: center center;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    button:hover .svg-wrapper {
+        animation: fly-1 0.6s ease-in-out infinite alternate;
+    }
+
+    button:hover svg {
+        transform: translateX(1.9em) rotate(45deg) scale(1.1);
+    }
+
+    button:hover span {
+        transform: translateX(5em);
+    }
+
+    button:active {
+        transform: scale(0.95);
+    }
+
+    @keyframes fly-1 {
+        from {
+            transform: translateY(0.1em);
+        }
+
+        to {
+            transform: translateY(-0.1em);
+        }
+    }
+
+
+    /* PREGUNTAS FRECUENTES */
+
+
+    .ContenedorFAQ {
+        background-color: #f8ddec;
+        border: 4px solid #e196bf;
+        padding: 0 2%;
+        margin: 0 5%;
+        border-radius: 10px;
+        font-family: 'Carme' !important;
+        font-weight: 500;
+        line-height: 190%;
+    }
+
+    .H1FAQ {
+        color: #395a9d;
+        text-align: center;
+    }
+
+    .PreguntasFrecuentes {
+        background-color: #395a9d;
+        width: 100%;
+
+    }
+
+    .preguntas-frecuentes {
+        background-color: #ffd6e6;
+        max-width: 700px;
+        margin: auto;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-family: 'Carme';
+    }
+
+    .preguntas-frecuentes h2 {
+        text-align: center;
+        color: #2a3962;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .faq-item {
+        background-color: #fff;
+        border-radius: 10px;
+        margin: 10px 0;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-family: 'Carme' !important;
+    }
+
+    .faq-item:hover {
+        background-color: #f7c2d4;
+    }
+
+    .faq-question {
+        font-size: 18px;
+        color: #111;
+    }
+
+    .faq-toggle {
+        font-size: 24px;
+        color: #2a3962;
+        font-weight: bold;
+    }
+
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0s ease;
+        background-color: #395a9d28;
+        border-radius: 0 0 10px 10px;
+        padding: 0 20px;
+    }
+
+    .faq-answer.open {
+        padding: 15px 20px;
+        max-height: 200px;
+    }
+
+
+    /* CONTACTO */
+
+    .card {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        /* 3:4 vertical */
+        position: relative;
+        /* importante para los hijos absolute */
+        cursor: pointer;
+        perspective: 1000px;
+        /* tu valor existente */
+    }
+
+    .TDCards {
+        width: 30%;
+    }
+
+    .TextoContacto {
+        font-family: 'montserrat';
+        font-size: 30px;
+        font-weight: 600;
+        color: #395a9d;
+    }
+
+    .TextoContactoCards {
+        font-family: 'montserrat';
+        font-size: 20px;
+        font-weight: 600;
+        color: #395a9d;
+    }
+
+    .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    .card.is-flipped .card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .card-front {
+        background: white;
+    }
+
+    .card-back {
+        background: white;
+        color: #395a9d;
+        transform: rotateY(180deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /*
+    .Contacto {
+        margin: 4% 0;
+    }
+
+    .H1Contacto {
+        color: white;
+        letter-spacing: .2em;
+        margin-bottom: 0px;
+    }
+
+    .FichaContacto {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+
+
+    .NekoIMG {
+        width: 85%;
+    }
+*/
+
+    /* HOTEL */
+
+    .DivHotel {
+        margin: 0 10%;
+    }
+
+    .PHotel1 {
+        color: #ffffff;
+        font-size: 1.5em;
+        padding: 5% 0;
+    }
+
+    /* HOTEL */
+
+    .DivHotel {
+        margin: 0 10%;
+    }
+
+    .PHotel1 {
+        color: #ffffff;
+        font-size: 1.5em;
+        padding: 5% 0;
+    }
+
+
+    .PHotel2 {
+        color: #ffffff;
+        font-size: 1.5em;
+        text-align: justify;
+        padding: 5% 0;
+    }
+
+    iframe {
+        border-radius: 8%;
+        width: 100%;
+    }
+
+    /*FORM TRANSPORTE*/
+
+    .FormularioTransporte {
+        margin: 2% auto;
+    }
+
+    label.DivFormTransporte {
+        color: #395a9d;
+    }
+
+
+    .DivFormTransporte form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        color: #395a9d !important;
+    }
+
+    .DivFormTransporte .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .DivFormTransporte label {
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: #395a9d;
+        text-align: left;
+    }
+
+    .DivFormTransporte input[type="email"] {
+        height: 23px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    .DivFormTransporte input[type="tel"] {
+        height: 23px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    .DivFormTransporte input[type="text"] {
+        height: 35px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        .DivFormTransporte form {
+            grid-template-columns: 1fr;
+            /* en móvil, una sola columna */
+        }
+
+        .TextoHeader1 {
+            display: none;
+        }
+    }
+
+
+    .AReserva {
+        font-size: 1em;
+        text-align: justify;
+    }
+
+    .AReserva:hover {
+        font-size: 1em;
+        text-align: justify;
+        color: rgb(221, 217, 0) !important;
+    }
+
+    /* MOBILE */
+
+    .PHotel2 {
+        color: #ffffff;
+        font-size: 1.5em;
+        text-align: justify;
+        padding: 5% 0;
+    }
+
+    /* MOBILE */
+
+    @media screen and (max-width: 768px) {
+
+
+        .MainTxt {
+            font-size: 40px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin: 4% 2%;
+        }
+
+        /* -- HEADER -- */
+        .ContainersHeaderP,
+        .ContainersHeaderIMG {
+            display: block;
+            width: 100% !important;
+            text-align: center !important;
+        }
+
+        .TableHeader tr {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .IMGHeader {
+            width: 80% !important;
+            margin: auto;
+        }
+
+        /* -- COUNTDOWN -- */
+        .countdown-container {
+            display: flex;
+            flex-direction: row !important;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 10;
+            background-color: #ffffff;
+        }
+
+        .countdown-item span {
+            font-size: 3em;
+        }
+
+        .Left,
+        .Right {
+            position: relative;
+            z-index: 1;
+            height: 400px;
+            display: flex;
+        }
+
+
+        /* -- SUBMENU -- */
+        .Submenu {
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px 10px;
+        }
+
+        .DivsMenu {
+            width: 100%;
+            margin: 2%;
+        }
+
+        /* -- FICHAS TEXTO + IMÁGENES -- */
+        .FichasII tr {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .FichasII td {
+            width: 100% !important;
+            padding: 10px 0 !important;
+        }
+
+        .FichasIMG {
+            width: 100% !important;
+        }
+
+        /* -- SELLOS -- */
+        .H1Sellos {
+            font-size: 50px;
+            padding: 10% 5%;
+        }
+
+        .H2Donde,
+        .H2Cuando {
+            font-size: 26px;
+            padding: 0;
+            margin: 0 0 5% 0;
+        }
+
+        .SellosTable td {
+            width: 100%;
+        }
+
+
+        .SVGGranDia {
+            width: 80px;
+            height: 80px;
+            margin-right: 5%;
+        }
+
+        .TextoDondeCuando {
+            padding: 0% 10% 0 4%;
+        }
+
+        .DivIMG {
+            width: 100%;
+        }
+
+        .SVGAlojamiento1,
+        .SVGAlojamiento2 {
+            width: 130px;
+        }
+
+        .TextoFichas {
+            letter-spacing: 0em !important;
+            /* Al hacer hover */
+        }
+
+        /* -- MONEDAS -- */
+        .TextoMonedas {
+            font-size: 18px;
+            margin: 5% 4%;
+        }
+
+        .Cuenta {
+            width: 90%;
+        }
+
+        .TextoCuenta {
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+
+        /* -- FORMULARIO -- */
+        .colleftFormulario {
+            flex-direction: column;
+        }
+
+        .LeftFormulario,
+        .RightFormulario {
+            display: none;
+        }
+
+        .MiddleFormulario {
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        .checkbox-group {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* -- PREGUNTAS FRECUENTES -- */
+        .preguntas-frecuentes {
+            padding: 20px;
+        }
+
+        .faq-item {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .faq-toggle {
+            align-self: flex-end;
+            margin-top: 10px;
+        }
+
+        /* -- CONTACTO -- */
+        .Contacto tr {
+            display: flex;
+            align-items: center;
+        }
+
+        .Contacto td {
+            padding: 11px !important;
+        }
+
+        .TextoContacto {
+            font-size: 18px;
+        }
+
+        .NekoIMG {
+            width: 60%;
+        }
+    }
+
+    /* Muy pequeños (teléfonos chicos, ≤480px) */
+    @media screen and (max-width: 480px) {
+        .MainTxt {
+            font-size: 28px;
+        }
+
+        .TDCards {
+            width: 50%;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 16px;
+        }
+
+        .countdown-item span {
+            font-size: 2em;
+        }
+
+        .FichasIMG {
+            width: 100% !important;
+        }
+
+        .TextoCuenta {
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+
+        .NekoIMG {
+            width: 80%;
+        }
+    }
+
+    /* Tablets en vertical (481px – 768px) */
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+        .MainTxt {
+            font-size: 40px;
+        }
+
+        .FichasIMG {
+            width: 80% !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .Contacto tr {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .Contacto td {
+
+            padding: 10px !important;
+        }
+
+        .card {
+            width: 100%;
+            /* ocupar casi todo el ancho */
+            max-width: 250px;
+        }
+    }
+
+
+    /* Tablets en horizontal / laptops pequeños (769px – 1024px) */
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+        .MainTxt {
+            font-size: 55px;
+        }
+
+        h1 {
+            font-size: 42px;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        .countdown-item span {
+            font-size: 3.5em;
+        }
+
+        .Submenu {
+            gap: 15px;
+        }
+
+        .FichasIMG {
+            width: 70%;
+        }
+    }
+
+    /* Pantallas grandes (≥1200px) */
+    @media screen and (min-width: 1200px) {
+        body {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .MainTxt {
+            font-size: 80px;
+        }
+
+        .FichasIMG {
+            width: 100%;
+        }
+    }
+
+    /* Carrusel full width */
+    .carousel {
+        position: relative;
+        width: 100%;
+        height: 80vh;
+        /*  ocupa 80% del alto de la pantalla, puedes poner 100vh si quieres full screen */
+        overflow: hidden;
+        margin-top: 8%;
+    }
+
+    .carousel-images {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        animation: slide 16s infinite;
+    }
+
+    .carousel-images img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+
+        13% {
+            transform: translateX(0);
+        }
+
+        16.6% {
+            transform: translateX(-100%);
+        }
+
+        30% {
+            transform: translateX(-100%);
+        }
+
+        33.3% {
+            transform: translateX(-200%);
+        }
+
+        46% {
+            transform: translateX(-200%);
+        }
+
+        50% {
+            transform: translateX(-300%);
+        }
+
+        63% {
+            transform: translateX(-300%);
+        }
+
+        66.6% {
+            transform: translateX(-400%);
+        }
+
+        80% {
+            transform: translateX(-400%);
+        }
+
+        83.3% {
+            transform: translateX(-500%);
+        }
+
+        96% {
+            transform: translateX(-500%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+</style>
+
+<body>
+    <table width="100%">
+        <tbody>
+            <tr>
+                <td style="padding: 0;"></td>
+                <td style="padding: 0; background-color: #395a9d;
+" width="950">
+
+                    <!-- CONTENIDO DEBAJO, ARRIBA NO TOCAR, SIRVE PARA AJUSTAR TAMAÑOS -->
+                    <table class="MainTable">
+                        <tbody>
+                            <tr>
+                                <td style="padding: 0">
+                                    <div class="colmask">
+                                        <div class="colmid">
+                                            <div class="colleft">
+                                                <div class="Middle">
+                                                    <table class="TableHeader">
+                                                        <tr>
+                                                            <td class="ContainersHeaderP">
+                                                                <p class="TextoHeader1">
+                                                                    Cuernavaca, Mor.
+                                                                </p>
+                                                            </td>
+                                                            <td class="ContainersHeaderIMG">
+                                                                <img src="https://i.ibb.co/99M8hrZn/Middle.png"
+                                                                    alt="Middle" border="0" class="IMGHeader">
+                                                            </td>
+                                                            <td class="ContainersHeaderP">
+                                                                <p class="TextoHeader">
+                                                                    13 DICIEMBRE 2025
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <table class="TableHeader Nombres">
+                                                        <tr>
+                                                            <td>
+                                                                <p class="MainTxt">
+                                                                    Karla & Eduardo
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <div class="countdown-container">
+                                                        <div class="countdown-item">
+                                                            <span id="days"></span>
+                                                            <div class="label">Días</div>
+                                                        </div>
+                                                        <div class="countdown-item">
+                                                            <span id="hours"></span>
+                                                            <div class="label">horas</div>
+                                                        </div>
+                                                        <div class="countdown-item">
+                                                            <span id="minutes"></span>
+                                                            <div class="label">minutos</div>
+                                                        </div>
+                                                        <div class="countdown-item">
+                                                            <span id="seconds"></span>
+                                                            <div class="label">segundos</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="Left">
+                                                </div>
+                                                <div class="Right">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+
+                    <!-- <table class="TableCounter">
+                        <tr>
+                            <td class="">
+                                <div class="countdown-container">
+                                    <div class="countdown-item">
+                                        <span id="days"></span>
+                                        <div class="label">Días</div>
+                                    </div>
+                                    <div class="countdown-item">
+                                        <span id="hours"></span>
+                                        <div class="label">horas</div>
+                                    </div>
+                                    <div class="countdown-item">
+                                        <span id="minutes"></span>
+                                        <div class="label">minutos</div>
+                                    </div>
+                                    <div class="countdown-item">
+                                        <span id="seconds"></span>
+                                        <div class="label">segundos</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table> -->
+                    <script defer>
+                        function startCountdown(targetDate) {
+                            const daysSpan = document.getElementById('days');
+                            const hoursSpan = document.getElementById('hours');
+                            const minutesSpan = document.getElementById('minutes');
+                            const secondsSpan = document.getElementById('seconds');
+
+                            function updateCountdown() {
+                                const now = new Date().getTime();
+                                const distance = targetDate - now;
+
+                                // Calculate time components
+                                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                                // Display the results, ensuring they don't show negative numbers
+                                daysSpan.textContent = Math.max(0, days);
+                                hoursSpan.textContent = Math.max(0, hours);
+                                minutesSpan.textContent = Math.max(0, minutes);
+                                secondsSpan.textContent = Math.max(0, seconds);
+
+                                // If the countdown is over, display a message
+                                if (distance < 0) {
+                                    clearInterval(countdownInterval);
+                                    document.querySelector('.countdown-container').innerHTML = "<h2>¡El evento ha comenzado!</h2>";
+                                }
+                            }
+
+                            // Update the countdown every 1 second
+                            const countdownInterval = setInterval(updateCountdown, 1000);
+
+                            // Initial call to display the countdown immediately
+                            updateCountdown();
+                        }
+
+                        // --- Define la fecha objetivo en UTC (Coordinated Universal Time) ---
+                        // Para "13 de diciembre de 2025, 23:59:59 en America/Mexico_City (UTC-6)",
+                        // esto equivale a las 05:59:59 AM del 14 de diciembre de 2025 UTC.
+                        // Parámetros de Date.UTC(): año, mes (0-11), día, hora, minuto, segundo
+                        const targetDate = new Date(Date.UTC(2025, 11, 14, 5, 59, 59)).getTime();
+                        // (Recuerda que los meses son de 0 a 11, así que diciembre es 11)
+
+                        // Inicia el contador cuando el script se carga
+                        startCountdown(targetDate);
+                    </script>
+
+
+                    <table class="TableSubmenu">
+                        <tr>
+                            <td class="">
+                                <div class="Submenu">
+                                    <div class="DivsMenu">
+                                        <a href="#NuestraHistoria">NOSOTROS</a>
+                                    </div>
+                                    <div class="DivsMenu">
+                                        <a href="#Lugar">LUGAR</a>
+
+                                    </div>
+                                    <div class="DivsMenu">
+                                        <a href="#RSPV">RSPV</a>
+
+                                    </div>
+                                    <div class="DivsMenu">
+                                        <a href="#FAQ">FAQ</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <table id="NuestraHistoria" class="TableH1">
+                        <tr>
+                            <td class="">
+                                <div class="TextoH1">
+                                    <h1>
+                                        NUESTRA HISTORIA
+                                    </h1>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; "
+                        class="stylingblock-content-wrapper">
+                        <tr>
+                            <td class="stylingblock-content-wrapper camarker-inner">
+
+
+                                <!--[if mso]><!-->
+                                <input type="radio" id="interactive" style="display:none;display:contents;mso-hide:all;"
+                                    checked="">
+                                <div class="ie-carousel mc-carousel-id-1751619445451" style="display:none">
+                                    <div role="group" aria-label="carousel" class="ie-carousel-wrap">
+
+                                        <label role="presentation">
+                                            <input type="radio" name="mc-carousel-id-1751619445451"
+                                                class="ie-radio-check" aria-label="">
+                                            <div class="ie-pos-arrow ie-img1">
+                                                <div class="ie-arrow-wrap">
+                                                    <div class="ie-arrow-padding"></div>
+                                                    <div class="ie-arrow">
+                                                        <div class="ie-apple-clickarea"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ie-pos-arrow ie-start">
+                                                <div class="ie-arrow-wrap">
+                                                    <div class="ie-arrow-padding"></div>
+                                                    <div class="ie-arrow">
+                                                        <div class="ie-apple-clickarea"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <label role="presentation">
+                                                <input type="radio" name="mc-carousel-id-1751619445451"
+                                                    class="ie-radio-check" aria-label="">
+                                                <div class="ie-pos-arrow ie-img2">
+                                                    <div class="ie-arrow-wrap">
+                                                        <div class="ie-arrow-padding"></div>
+                                                        <div class="ie-arrow">
+                                                            <div class="ie-apple-clickarea"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <label role="presentation">
+                                                    <input type="radio" name="mc-carousel-id-1751619445451"
+                                                        class="ie-radio-check" aria-label="">
+                                                    <div class="ie-pos-arrow ie-img3">
+                                                        <div class="ie-arrow-wrap">
+                                                            <div class="ie-arrow-padding"></div>
+                                                            <div class="ie-arrow">
+                                                                <div class="ie-apple-clickarea"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <label role="presentation">
+                                                        <input type="radio" name="mc-carousel-id-1751619445451"
+                                                            class="ie-radio-check" aria-label="">
+                                                        <div class="ie-pos-arrow ie-img4">
+                                                            <div class="ie-arrow-wrap">
+                                                                <div class="ie-arrow-padding"></div>
+                                                                <div class="ie-arrow">
+                                                                    <div class="ie-apple-clickarea"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <label role="presentation">
+                                                            <div class="ie-mid">
+
+                                                                <span class="ie-img-wrap ie-img4"><span class="ie-slide"
+                                                                        role="img" title=""></span></span>
+
+                                                                <span class="ie-img-wrap ie-img3"><span class="ie-slide"
+                                                                        role="img" title=""></span></span>
+
+                                                                <span class="ie-img-wrap ie-img2"><span class="ie-slide"
+                                                                        role="img" title=""></span></span>
+
+                                                                <span class="ie-img-wrap ie-img1"><span class="ie-slide"
+                                                                        role="img" title=""></span></span>
+
+                                                            </div>
+                                                        </label>
+
+                                                        <div class="ie-thumb ie-img4"><span></span></div>
+                                                    </label>
+
+                                                    <div class="ie-thumb ie-img3"><span></span></div>
+                                                </label>
+
+                                                <div class="ie-thumb ie-img2"><span></span></div>
+                                            </label>
+
+                                            <div class="ie-thumb ie-img1"><span></span></div>
+                                        </label>
+
+                                    </div>
+                                </div>
+                                <!--<![endif]-->
+
+                                <div class="ie-carouselFallback" style="text-align:center">
+                                    <span style="display:block;"><img
+                                            src="https://image.mc.groupon.com/lib/fe3e157075640475711070/m/1/480x200_desktop+banner_PL.png"
+                                            alt="" width="100%" style="max-width:100%; vertical-align:middle"></span>
+
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <table class="TableH1">
+                        <tr>
+                            <td>
+                                <!-- Carrusel -->
+                                <div class="PusheenDiv">
+                                    <img class="PusheenIMG" src="./WishYouHappiness.png" alt="" srcset="">
+                                </div>
+                                <div class="carousel">
+                                    <div class="carousel-images">
+                                        <img src="/photo1.jpg" alt="foto1">
+                                        <img src="/photo2.jpg" alt="foto2">
+                                        <img src="/photo3.jpg" alt="foto3">
+                                        <img src="/photo4.jpg" alt="foto4">
+                                        <img src="/photo5.jpg" alt="foto5">
+                                        <img src="/photo6.JPG" alt="foto6">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <table id="Lugar" class="SellosTable Sellos">
+                        <tr class="">
+                            <td class="" style="height: 25%;">
+                                <div class="">
+                                    <h1 class="H1Sellos">
+                                        <span style="color: white;">El Gran</span> Día
+                                    </h1>
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: initial;">
+                                <div class="TextoDondeCuando" style="">
+                                    <svg class="SVGGranDia" fill="#e473b1" viewBox="0 0 32 32"
+                                        xmlns="http://www.w3.org/2000/svg" width="120" height="120">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <title></title>
+                                            <g data-name="Layer 12" id="Layer_12">
+                                                <path
+                                                    d="M16,17a5,5,0,1,0-5-5A5,5,0,0,0,16,17Zm0-8a3,3,0,1,1-3,3A3,3,0,0,1,16,9Z">
+                                                </path>
+                                                <path
+                                                    d="M22.72,20.57C24.89,16.78,26,13.89,26,12A10,10,0,0,0,6,12c0,1.89,1.11,4.78,3.28,8.57C6.33,21.09,2,22.32,2,25c0,3.44,7.26,5,14,5s14-1.56,14-5C30,22.32,25.67,21.09,22.72,20.57ZM16,4a8,8,0,0,1,8,8c0,1.68-1.33,4.81-3.74,8.82-.18.3-.36.6-.55.9,0,.08-.09.15-.13.22l-.45.71a1.74,1.74,0,0,1-.11.18c-.37.58-.74,1.15-1.09,1.67l-.08.12-.45.67-.07.1c-.33.49-.64.94-.91,1.32l-.06.08-.32.46,0,.05,0-.05c-.49-.68-1.14-1.61-1.87-2.7h0c-.35-.54-.73-1.11-1.11-1.71l-.12-.19L12.44,22l-.17-.27-.42-.7-.11-.18h0C9.33,16.81,8,13.68,8,12A8,8,0,0,1,16,4ZM4,25c0-.59,1.88-1.91,6.36-2.59l0,.05.42.67.07.12.46.73,0,0c.32.51.65,1,1,1.48l0,0,.43.64.08.11.35.52.07.1.34.5.05.06L14,28C7.75,27.65,4,26,4,25ZM18,28l.34-.48.05-.08.34-.49.07-.1.34-.5.1-.14.35-.53.1-.15c.31-.46.62-.94.94-1.45l.11-.16.37-.59.16-.26.32-.52.06-.09c4.48.68,6.36,2,6.36,2.59C28,26,24.25,27.65,18,28Z">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                    <h2 class="H2Donde">¿Dónde? <span><a
+                                                href="https://maps.app.goo.gl/1WXCSaaM65sEmmF76"
+                                                style="color:#fcc85e">Ver
+                                                Mapa</a></span> <br><span>Jardín Santa Bárbara</span></h2>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: initial;">
+                                <div class="TextoDondeCuando" style="">
+                                    <svg class="SVGGranDia" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" width="120" height="120">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path
+                                                d="M12 7V12H15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                                stroke="#e473b1" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </g>
+                                    </svg>
+                                    <h2 class="H2Cuando">¿Cuándo? <br><span>Diciembre 13, 2025. 2:30 PM</span></h2>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="Fichas">
+                        <tr>
+                            <td class="">
+                                <div class="Texto">
+                                    <h3>
+                                        Queremos hacer tu viaje lo más <span
+                                            style="color: rgb(225, 150, 191);">cómodo</span> posible. Haz clic para
+                                        conocer las
+                                        opciones de transporte y alojamiento que hemos preparado para ti.
+                                    </h3>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="FichasII">
+                        <tr>
+                            <td class="TdFichas">
+                                <a href="#Alojamiento">
+                                    <div class="DivIMG">
+                                        <div class="FichasIMG">
+                                            <svg class="SVGAlojamiento1" fill="#395a9d" version="1.1" id="Layer_1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 286.154 286.154"
+                                                xml:space="preserve" stroke="#395a9d">
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke="#ffffff" stroke-width="8.58462">
+                                                    <g>
+                                                        <g>
+                                                            <g>
+                                                                <path
+                                                                    d="M286.154,110.769V83.077h-3.318c-5.188-3.235-30.632-20.248-38.395-47.423l-0.96-3.346H42.674l-0.96,3.346 c-7.74,27.088-33.208,44.178-38.4,47.423H0v27.692h23.077v133.846H4.615v9.231h276.923v-9.231h-18.462V110.769H286.154z M276.923,101.538h-13.846v-9.231h13.846V101.538z M23.077,101.539H9.231v-9.231h13.846V101.539z M41.539,244.615h-9.231v-96.923 h9.231V244.615z M60,110.769v27.692H32.308v-27.692H60z M32.308,101.539v-9.231h13.846v9.231H32.308z M110.769,110.769v27.692 H69.231v-27.692H110.769z M78.462,101.538v-9.231h13.846v9.231H78.462z M101.539,101.538v-9.231h13.846v9.231H101.539z M69.231,101.539H55.385v-9.231h13.846V101.539z M73.846,244.615H50.769v-23.077h23.077V244.615z M73.846,212.308H50.769v-46.154 h23.077V212.308z M73.846,156.923H50.769v-9.231h23.077V156.923z M92.308,244.615h-9.231v-96.923h9.231V244.615z M184.616,244.615h-83.077v-96.923h13.965c-2.931,3.868-4.735,8.631-4.735,13.846v27.692c0,11.142,7.943,20.465,18.462,22.611 v14.312h27.692v-14.312c10.518-2.146,18.462-11.465,18.462-22.611v-27.692c0-5.215-1.805-9.978-4.735-13.846h13.966V244.615z M166.154,110.77v27.692h-13.846h-18.462H120V110.77H166.154z M124.616,101.538v-9.231h13.846v9.231H124.616z M147.692,101.538 v-9.231h13.846v9.231H147.692z M133.846,147.692h18.462c7.634,0,13.846,6.213,13.846,13.846v27.692 c0,7.634-6.212,13.846-13.846,13.846h-18.462c-7.634,0-13.846-6.212-13.846-13.846v-27.692 C120,153.904,126.212,147.692,133.846,147.692z M147.693,212.308v4.615h-9.231v-4.615H147.693z M216.923,110.77v27.692h-41.538 V110.77H216.923z M193.846,101.538v-9.231h13.846v9.231H193.846z M184.615,101.538h-13.846v-9.231h13.846V101.538z M203.077,244.615h-9.231v-96.923h9.231V244.615z M235.385,244.615h-23.077v-23.077h23.077V244.615z M235.385,212.308h-23.077 v-46.154h23.077V212.308z M235.385,156.923h-23.077v-9.231h23.077V156.923z M253.846,244.615h-9.231v-96.923h9.231V244.615z M253.846,138.462h-27.692V110.77h27.692V138.462z M216.923,101.538v-9.231h13.846v9.231H216.923z M253.846,101.539H240v-9.231 h13.846V101.539z M19.066,83.076C29.22,74.797,43.02,60.743,49.542,41.538h187.066c6.522,19.205,20.322,33.258,30.48,41.538 H19.066z">
+                                                                </path>
+                                                                <rect x="55.385" y="226.154" width="9.231"
+                                                                    height="9.231">
+                                                                </rect>
+                                                                <rect x="216.923" y="226.154" width="9.231"
+                                                                    height="9.231">
+                                                                </rect>
+                                                                <rect x="147.692" y="184.615" width="8.654"
+                                                                    height="9.231">
+                                                                </rect>
+                                                                <rect x="129.231" y="120" width="9.231" height="9.231">
+                                                                </rect>
+                                                                <rect x="147.692" y="120" width="9.231" height="9.231">
+                                                                </rect>
+                                                                <rect x="83.077" y="120" width="9.231" height="9.231">
+                                                                </rect>
+                                                                <rect x="41.538" y="120" width="9.231" height="9.231">
+                                                                </rect>
+                                                                <rect x="235.385" y="120" width="9.231" height="9.231">
+                                                                </rect>
+                                                                <rect x="193.846" y="120" width="9.231" height="9.231">
+                                                                </rect>
+                                                                <polygon
+                                                                    points="138.462,166.154 147.692,166.154 147.692,175.385 156.923,175.385 156.923,156.923 129.231,156.923 129.231,193.846 138.462,193.846 ">
+                                                                </polygon>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <g>
+                                                        <g>
+                                                            <g>
+                                                                <path
+                                                                    d="M286.154,110.769V83.077h-3.318c-5.188-3.235-30.632-20.248-38.395-47.423l-0.96-3.346H42.674l-0.96,3.346 c-7.74,27.088-33.208,44.178-38.4,47.423H0v27.692h23.077v133.846H4.615v9.231h276.923v-9.231h-18.462V110.769H286.154z M276.923,101.538h-13.846v-9.231h13.846V101.538z M23.077,101.539H9.231v-9.231h13.846V101.539z M41.539,244.615h-9.231v-96.923 h9.231V244.615z M60,110.769v27.692H32.308v-27.692H60z M32.308,101.539v-9.231h13.846v9.231H32.308z M110.769,110.769v27.692 H69.231v-27.692H110.769z M78.462,101.538v-9.231h13.846v9.231H78.462z M101.539,101.538v-9.231h13.846v9.231H101.539z M69.231,101.539H55.385v-9.231h13.846V101.539z M73.846,244.615H50.769v-23.077h23.077V244.615z M73.846,212.308H50.769v-46.154 h23.077V212.308z M73.846,156.923H50.769v-9.231h23.077V156.923z M92.308,244.615h-9.231v-96.923h9.231V244.615z M184.616,244.615h-83.077v-96.923h13.965c-2.931,3.868-4.735,8.631-4.735,13.846v27.692c0,11.142,7.943,20.465,18.462,22.611 v14.312h27.692v-14.312c10.518-2.146,18.462-11.465,18.462-22.611v-27.692c0-5.215-1.805-9.978-4.735-13.846h13.966V244.615z M166.154,110.77v27.692h-13.846h-18.462H120V110.77H166.154z M124.616,101.538v-9.231h13.846v9.231H124.616z M147.692,101.538 v-9.231h13.846v9.231H147.692z M133.846,147.692h18.462c7.634,0,13.846,6.213,13.846,13.846v27.692 c0,7.634-6.212,13.846-13.846,13.846h-18.462c-7.634,0-13.846-6.212-13.846-13.846v-27.692 C120,153.904,126.212,147.692,133.846,147.692z M147.693,212.308v4.615h-9.231v-4.615H147.693z M216.923,110.77v27.692h-41.538 V110.77H216.923z M193.846,101.538v-9.231h13.846v9.231H193.846z M184.615,101.538h-13.846v-9.231h13.846V101.538z M203.077,244.615h-9.231v-96.923h9.231V244.615z M235.385,244.615h-23.077v-23.077h23.077V244.615z M235.385,212.308h-23.077 v-46.154h23.077V212.308z M235.385,156.923h-23.077v-9.231h23.077V156.923z M253.846,244.615h-9.231v-96.923h9.231V244.615z M253.846,138.462h-27.692V110.77h27.692V138.462z M216.923,101.538v-9.231h13.846v9.231H216.923z M253.846,101.539H240v-9.231 h13.846V101.539z M19.066,83.076C29.22,74.797,43.02,60.743,49.542,41.538h187.066c6.522,19.205,20.322,33.258,30.48,41.538 H19.066z">
+                                                                </path>
+                                                                <rect x="55.385" y="226.154" width="9.231"
+                                                                    height="9.231">
+                                                                </rect>
+                                                                <rect x="216.923" y="226.154" width="9.231"
+                                                                    height="9.231">
+                                                                </rect>
+                                                                <rect x="147.692" y="184.615" width="8.654"
+                                                                    height="9.231">
+                                                                </rect>
+                                                                <rect x="129.231" y="120" width="9.231" height="9.231">
+                                                                </rect>
+                                                                <rect x="147.692" y="120" width="9.231" height="9.231">
+                                                                </rect>
+                                                                <rect x="83.077" y="120" width="9.231" height="9.231">
+                                                                </rect>
+                                                                <rect x="41.538" y="120" width="9.231" height="9.231">
+                                                                </rect>
+                                                                <rect x="235.385" y="120" width="9.231" height="9.231">
+                                                                </rect>
+                                                                <rect x="193.846" y="120" width="9.231" height="9.231">
+                                                                </rect>
+                                                                <polygon
+                                                                    points="138.462,166.154 147.692,166.154 147.692,175.385 156.923,175.385 156.923,156.923 129.231,156.923 129.231,193.846 138.462,193.846 ">
+                                                                </polygon>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <svg class="SVGAlojamiento2" fill="#e473b1" version="1.1" id="Capa_1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 506.812 506.812"
+                                                xml:space="preserve" stroke="#e473b1">
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke="#fcfcfc" stroke-width="15.20436">
+                                                    <g>
+                                                        <g id="Layer_2_28_">
+                                                            <polygon
+                                                                points="96.428,396.844 0,396.844 0,444.656 73.928,444.656 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="442.447,444.656 506.812,444.656 506.812,396.844 419.946,396.844 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="127.927,329.906 38.25,329.906 38.25,377.719 105.427,377.719 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="410.948,377.719 468.562,377.719 468.562,329.906 388.448,329.906 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="159.426,262.969 86.062,262.969 86.062,310.781 136.925,310.781 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="379.449,310.781 420.75,310.781 420.75,262.969 356.949,262.969 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="190.925,196.031 133.875,196.031 133.875,243.844 168.424,243.844 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="347.951,243.844 372.938,243.844 372.938,196.031 325.45,196.031 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="217.929,138.656 221.754,130.509 226.928,119.531 229.5,119.531 229.5,81.281 286.875,81.281 286.875,119.531 289.447,119.531 294.621,130.509 298.445,138.656 316.452,176.906 353.812,176.906 344.25,138.656 325.125,138.656 325.125,81.281 344.25,81.281 344.25,43.031 172.125,43.031 172.125,81.281 191.25,81.281 191.25,138.656 172.125,138.656 162.562,176.906 199.923,176.906 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="421.314,444.656 398.813,396.844 389.815,377.719 367.314,329.906 358.316,310.781 335.815,262.969 326.808,243.844 304.317,196.031 295.31,176.906 277.312,138.656 239.062,138.656 221.066,176.906 212.058,196.031 189.567,243.844 180.559,262.969 158.059,310.781 149.06,329.906 126.56,377.719 117.562,396.844 95.061,444.656 86.062,463.781 430.312,463.781 ">
+                                                            </polygon>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <g>
+                                                        <g id="Layer_2_28_">
+                                                            <polygon
+                                                                points="96.428,396.844 0,396.844 0,444.656 73.928,444.656 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="442.447,444.656 506.812,444.656 506.812,396.844 419.946,396.844 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="127.927,329.906 38.25,329.906 38.25,377.719 105.427,377.719 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="410.948,377.719 468.562,377.719 468.562,329.906 388.448,329.906 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="159.426,262.969 86.062,262.969 86.062,310.781 136.925,310.781 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="379.449,310.781 420.75,310.781 420.75,262.969 356.949,262.969 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="190.925,196.031 133.875,196.031 133.875,243.844 168.424,243.844 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="347.951,243.844 372.938,243.844 372.938,196.031 325.45,196.031 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="217.929,138.656 221.754,130.509 226.928,119.531 229.5,119.531 229.5,81.281 286.875,81.281 286.875,119.531 289.447,119.531 294.621,130.509 298.445,138.656 316.452,176.906 353.812,176.906 344.25,138.656 325.125,138.656 325.125,81.281 344.25,81.281 344.25,43.031 172.125,43.031 172.125,81.281 191.25,81.281 191.25,138.656 172.125,138.656 162.562,176.906 199.923,176.906 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="421.314,444.656 398.813,396.844 389.815,377.719 367.314,329.906 358.316,310.781 335.815,262.969 326.808,243.844 304.317,196.031 295.31,176.906 277.312,138.656 239.062,138.656 221.066,176.906 212.058,196.031 189.567,243.844 180.559,262.969 158.059,310.781 149.06,329.906 126.56,377.719 117.562,396.844 95.061,444.656 86.062,463.781 430.312,463.781 ">
+                                                            </polygon>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <p class="TextoFichas">Alojamiento</p>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="#Transporte">
+
+                                    <div class="DivIMG">
+                                        <div class="FichasIMG">
+                                            <svg class="SVGAlojamiento1" fill="#395a9d" version="1.1" id="Capa_1"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 591.049 591.049"
+                                                xml:space="preserve" stroke="#395a9d">
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke="#f2f2f2"
+                                                    stroke-width="17.731469999999998">
+                                                    <g>
+                                                        <g id="Layer_2_51_">
+                                                            <path
+                                                                d="M428.486,426.564V309.271h-19.125v38.499l-86.062-8.301v-11.073h-19.125v9.228l-86.063-8.3v-20.053l-19.125-1.492v19.699 l-95.625-9.219v-13.368l-19.125-3.385v82.983L0,374.19l38.766,34.846l361.033,53.636l86.062-9.16l105.188-29.491v-18.331 l-105.188,27.894L428.486,426.564z M304.174,411.369l-200.813-24.547v-56.734l95.625,9.219v46.005l19.125,2.419v-46.578 l86.063,8.3V411.369z M409.361,424.23l-86.062-10.519v-62.404l86.062,8.3V424.23z">
+                                                            </path>
+                                                            <path
+                                                                d="M428.486,299.708l0.938-32.273c0,0-0.938-62.156-66.996-49.802c-54.936,10.261-58.254,56.381-58.254,70.122v31.078h20.693 c0,0-1.568-21.516,0.994-43.968c1.779-15.549,9.391-28.649,40.277-34.607c38.785-7.487,43.223,22.099,43.223,38.222v21.229 H428.486z">
+                                                            </path>
+                                                            <path
+                                                                d="M355.391,202.151c44.408-8.826,63.705,11.494,63.705,11.494l-0.172-85.269l-114.75,18.331v85.269 C304.174,231.977,317.57,209.667,355.391,202.151z">
+                                                            </path>
+                                                            <polygon
+                                                                points="438.049,378.149 438.049,414.458 476.27,419.096 582.012,390.953 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="399.799,374.821 332.861,368.787 332.861,401.625 399.799,409.782 ">
+                                                            </polygon>
+                                                            <path
+                                                                d="M84.236,290.547l204.695,9.678c0,0-0.593-8.281,1.798-29.797s13.445-38.451,13.445-38.451l-171.332,0.794 C132.842,232.771,91.599,240.487,84.236,290.547z">
+                                                            </path>
+                                                            <polygon
+                                                                points="7.334,357.083 75.668,366.646 75.467,347.501 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="112.923,374.831 189.423,384.154 189.423,356.031 112.923,349.223 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="294.611,365.383 227.673,359.436 227.673,388.812 294.611,396.968 ">
+                                                            </polygon>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <g>
+                                                        <g id="Layer_2_51_">
+                                                            <path
+                                                                d="M428.486,426.564V309.271h-19.125v38.499l-86.062-8.301v-11.073h-19.125v9.228l-86.063-8.3v-20.053l-19.125-1.492v19.699 l-95.625-9.219v-13.368l-19.125-3.385v82.983L0,374.19l38.766,34.846l361.033,53.636l86.062-9.16l105.188-29.491v-18.331 l-105.188,27.894L428.486,426.564z M304.174,411.369l-200.813-24.547v-56.734l95.625,9.219v46.005l19.125,2.419v-46.578 l86.063,8.3V411.369z M409.361,424.23l-86.062-10.519v-62.404l86.062,8.3V424.23z">
+                                                            </path>
+                                                            <path
+                                                                d="M428.486,299.708l0.938-32.273c0,0-0.938-62.156-66.996-49.802c-54.936,10.261-58.254,56.381-58.254,70.122v31.078h20.693 c0,0-1.568-21.516,0.994-43.968c1.779-15.549,9.391-28.649,40.277-34.607c38.785-7.487,43.223,22.099,43.223,38.222v21.229 H428.486z">
+                                                            </path>
+                                                            <path
+                                                                d="M355.391,202.151c44.408-8.826,63.705,11.494,63.705,11.494l-0.172-85.269l-114.75,18.331v85.269 C304.174,231.977,317.57,209.667,355.391,202.151z">
+                                                            </path>
+                                                            <polygon
+                                                                points="438.049,378.149 438.049,414.458 476.27,419.096 582.012,390.953 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="399.799,374.821 332.861,368.787 332.861,401.625 399.799,409.782 ">
+                                                            </polygon>
+                                                            <path
+                                                                d="M84.236,290.547l204.695,9.678c0,0-0.593-8.281,1.798-29.797s13.445-38.451,13.445-38.451l-171.332,0.794 C132.842,232.771,91.599,240.487,84.236,290.547z">
+                                                            </path>
+                                                            <polygon
+                                                                points="7.334,357.083 75.668,366.646 75.467,347.501 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="112.923,374.831 189.423,384.154 189.423,356.031 112.923,349.223 ">
+                                                            </polygon>
+                                                            <polygon
+                                                                points="294.611,365.383 227.673,359.436 227.673,388.812 294.611,396.968 ">
+                                                            </polygon>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <svg class="SVGAlojamiento2" viewBox="0 0 24 24" id="Layer_1"
+                                                data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" fill="#e473b1">
+                                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke="#fcfcfc" stroke-width="0.72">
+                                                    <defs>
+                                                        <style>
+                                                            .cls-1 {
+                                                                fill: none;
+                                                                stroke: #e473b1;
+                                                                stroke-miterlimit: 10;
+                                                                stroke-width: 1.92px;
+                                                            }
+                                                        </style>
+                                                    </defs>
+                                                    <path class="cls-1"
+                                                        d="M.5,16.79H18.71A3.82,3.82,0,0,0,22.54,13,9.59,9.59,0,0,0,13,3.38H.5">
+                                                    </path>
+                                                    <circle class="cls-1" cx="3.38" cy="18.71" r="1.92"></circle>
+                                                    <circle class="cls-1" cx="13.92" cy="18.71" r="1.92"></circle>
+                                                    <circle class="cls-1" cx="17.75" cy="18.71" r="1.92"></circle>
+                                                    <path class="cls-1"
+                                                        d="M22.54,13H15.83A3.84,3.84,0,0,1,12,9.12a1.93,1.93,0,0,1,1.92-1.91h6.7A9.55,9.55,0,0,1,22.54,13Z">
+                                                    </path>
+                                                    <path class="cls-1"
+                                                        d="M.5,7.21H6.25A1.92,1.92,0,0,1,8.17,9.12h0A1.92,1.92,0,0,1,6.25,11H.5">
+                                                    </path>
+                                                    <line class="cls-1" x1="3.38" y1="7.21" x2="3.38" y2="11.04"></line>
+                                                    <line class="cls-1" x1="0.5" y1="20.63" x2="23.5" y2="20.63"></line>
+                                                </g>
+                                                <g id="SVGRepo_iconCarrier">
+                                                    <defs>
+                                                        <style>
+                                                            .cls-1 {
+                                                                fill: none;
+                                                                stroke: #e473b1;
+                                                                stroke-miterlimit: 10;
+                                                                stroke-width: 1.92px;
+                                                            }
+                                                        </style>
+                                                    </defs>
+                                                    <path class="cls-1"
+                                                        d="M.5,16.79H18.71A3.82,3.82,0,0,0,22.54,13,9.59,9.59,0,0,0,13,3.38H.5">
+                                                    </path>
+                                                    <circle class="cls-1" cx="3.38" cy="18.71" r="1.92"></circle>
+                                                    <circle class="cls-1" cx="13.92" cy="18.71" r="1.92"></circle>
+                                                    <circle class="cls-1" cx="17.75" cy="18.71" r="1.92"></circle>
+                                                    <path class="cls-1"
+                                                        d="M22.54,13H15.83A3.84,3.84,0,0,1,12,9.12a1.93,1.93,0,0,1,1.92-1.91h6.7A9.55,9.55,0,0,1,22.54,13Z">
+                                                    </path>
+                                                    <path class="cls-1"
+                                                        d="M.5,7.21H6.25A1.92,1.92,0,0,1,8.17,9.12h0A1.92,1.92,0,0,1,6.25,11H.5">
+                                                    </path>
+                                                    <line class="cls-1" x1="3.38" y1="7.21" x2="3.38" y2="11.04"></line>
+                                                    <line class="cls-1" x1="0.5" y1="20.63" x2="23.5" y2="20.63"></line>
+                                                </g>
+                                            </svg>
+                                            <p class="TextoFichas">Transporte</p>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+                    <table class="Monedas">
+                        <tr>
+                            <td class="">
+                                <div class="Texto">
+                                    <h1 class="">
+                                        <span style="color: #fcc85e;">MONEDAS</span> PARA NUESTRO VIAJE POKEMON
+                                    </h1>
+                                    <p class="TextoMonedas">
+                                        ¡Gracias por ser parte de nuestra gran aventura! <br><br>
+                                        Si deseas acompañar tu
+                                        presencia con un apoyo que nos ayude a iniciar esta nueva etapa, y a emprender
+                                        nuestra aventura a la luna de miel, cualquier contribución será como un valioso
+                                        "XP" que nos impulsa a seguir coleccionando momentos felices.
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="TDCuenta">
+                                <div class="Cuenta">
+                                    <p class="TextoCuenta">
+                                        <span>Datos para tu depósito de <br>Pokemonedas</span><br><br>
+                                        Banco: Banco de Aventura <br><br>
+                                        Cuenta Clave: 12345678 <br><br>
+                                        Titular: Ash Ketchup <br><br>
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="MalteseDiv">
+                                    <img class="MalteseIMG"
+                                        src="./Screenshot_20250818_120927_Instagram-removebg-preview.png" alt=""
+                                        srcset="">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+                    <table class="TableH1">
+                        <tr>
+                            <td>
+                                <!-- Carrusel -->
+                                <div class="PusheenDiv">
+                                    <img class="PusheenIMG" src="./WishYouHappiness.png" alt="" srcset="">
+                                </div>
+                                <div class="carousel">
+                                    <div class="carousel-images">
+                                        <img src="/photo7.jpg" alt="foto1">
+                                        <img src="/photo8.jpg" alt="foto2">
+                                        <img src="/photo9.jpg" alt="foto3">
+                                        <img src="/photo10.png" alt="foto4">
+                                        <img src="/photo11.png" alt="foto5">
+                                        <img src="/photo12.png" alt="foto6">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <table id="RSPV" class="Formulario">
+                        <tbody>
+                            <tr>
+                                <td style="padding: 0">
+                                    <div class="colmaskFormulario">
+                                        <div class="colmidFormulario">
+                                            <div class="colleftFormulario">
+                                                <div class="LeftFormulario">
+                                                    <img src="https://i.ibb.co/wNNC3TN5/PinkLeft.png" alt="" border="0"
+                                                        class="ImagenIzquierda">
+                                                </div>
+                                                <div class="MiddleFormulario">
+                                                    <table class="">
+                                                        <tr>
+                                                            <td>
+                                                                <p class="MainTxtFormulario">
+                                                                    Emplea el código que te compartimos para confirmar
+                                                                    tu Asistencia!
+                                                                    <br>
+                                                                    <br>
+                                                                    Recuerda que es <span
+                                                                        style="text-decoration:underline; color: #fcc85e">individual
+                                                                        e intransferible</span>:
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <table class="BloqueFormulario" style="width: 100%;">
+                                                        <tr>
+                                                            <td>
+                                                                <form id="confirmationForm" onsubmit="return false;">
+                                                                    <div class="form-group">
+                                                                        <label for="CodigoRSVP" class="Codigo">*Código
+                                                                            RSVP:</label>
+                                                                        <input type="text" name="CodigoRSVP"
+                                                                            id="CodigoRSVP" required>
+                                                                        <button class="cta">
+                                                                            <span class="hover-underline-animation">
+                                                                                Consultar</span>
+                                                                            <svg id="arrow-horizontal"
+                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                width="90" height="10"
+                                                                                viewBox="0 0 46 16">
+                                                                                <path id="Path_10" data-name="Path 10"
+                                                                                    d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                                                                                    transform="translate(30)"></path>
+                                                                            </svg>
+                                                                        </button>
+
+                                                                    </div>
+
+                                                                    <p id="saludo-personalizado"
+                                                                        style="font-weight: bold; text-align: center; min-height: 20px;">
+                                                                    </p>
+
+                                                                    <div id="asistencia-form-section"
+                                                                        style="display: none;">
+                                                                        <div class="form-group">
+                                                                            <label
+                                                                                style="text-align: center;">¿Asistirás?</label>
+                                                                            <div class="checkbox-group"
+                                                                                style="text-align:center;">
+                                                                                <label><input type="radio"
+                                                                                        name="Asistencia"
+                                                                                        id="AsistenciaSi" value="Si"
+                                                                                        required> Sí</label>
+                                                                                <label><input type="radio"
+                                                                                        name="Asistencia"
+                                                                                        id="AsistenciaNo" value="No">
+                                                                                    No</label>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="form-group">
+                                                                            <label for="Alergias">Restricciones
+                                                                                Alimentarias / Alergias:</label>
+                                                                            <input type="text" class="Text"
+                                                                                id="Alergias" name="Alergias">
+                                                                        </div>
+
+                                                                        <div
+                                                                            style="width: 100%; display: flex; justify-content:center;">
+                                                                            <button type="submit">
+                                                                                <div class="svg-wrapper-1">
+                                                                                    <div class="svg-wrapper">
+                                                                                        <svg width="70px" height="70px"
+                                                                                            viewBox="0 0 48.00 48.00"
+                                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                                            fill="#e473b1"
+                                                                                            stroke="#e473b1"
+                                                                                            stroke-width="0.768">
+                                                                                            <g id="SVGRepo_bgCarrier"
+                                                                                                stroke-width="0"></g>
+                                                                                            <g id="SVGRepo_tracerCarrier"
+                                                                                                stroke-linecap="round"
+                                                                                                stroke-linejoin="round"
+                                                                                                stroke="#CCCCCC"
+                                                                                                stroke-width="1.152">
+                                                                                                <defs>
+                                                                                                    <style>
+                                                                                                        .a {
+                                                                                                            fill: none;
+                                                                                                            stroke: #e473b1;
+                                                                                                            stroke-linecap: round;
+                                                                                                            stroke-linejoin: round;
+                                                                                                        }
+
+                                                                                                        .b {
+                                                                                                            fill: #e473b1;
+                                                                                                        }
+                                                                                                    </style>
+                                                                                                </defs>
+                                                                                                <path class="a"
+                                                                                                    d="M30.37,23.32a13.6,13.6,0,0,0,3-8.37A9.16,9.16,0,0,0,30,8.24S29.73,5,28.7,4.56s-4.1,2-4.1,2-5,.21-6.93,1.49c0,0-4.44-1.06-5-.29s.26,4.14.26,4.14a9.1,9.1,0,0,0-1.45,5.17c0,3.25,4.91,7.83,4.91,7.83a21.21,21.21,0,0,0-3.12,10.43c0,4.27,2.08,5.3,2.08,5.3">
+                                                                                                </path>
+                                                                                                <path class="a"
+                                                                                                    d="M17.25,29.61,20.15,41s-1.24,2.52,2.57,2.52,3-3.16,1.92-3.59l-1.88-7.22">
+                                                                                                </path>
+                                                                                                <path class="a"
+                                                                                                    d="M29.13,38.07c-2,.81-2.74,3.93.81,3.93s4.92-4,4.92-6.75a29.07,29.07,0,0,0-1.24-6.75,4.25,4.25,0,0,0,1.24-1.84c.17-.9,1.11-10,1.19-10.39a4.27,4.27,0,0,0,.47-1.49,2.65,2.65,0,0,0-3.49-2">
+                                                                                                </path>
+                                                                                                <path class="a"
+                                                                                                    d="M25.23,40.44a19,19,0,0,1,2.25-.27">
+                                                                                                </path>
+                                                                                                <path class="a"
+                                                                                                    d="M20,41.57a6.68,6.68,0,0,1-2.82.43c-1.07,0-3.5-1.77-.15-3.91">
+                                                                                                </path>
+                                                                                                <circle class="a"
+                                                                                                    cx="22.93"
+                                                                                                    cy="27.96" r="2.51">
+                                                                                                </circle>
+                                                                                                <path class="a"
+                                                                                                    d="M23.89,25.62a37.14,37.14,0,0,0,5.88-.71">
+                                                                                                </path>
+                                                                                                <path class="a"
+                                                                                                    d="M16.39,24.91a29.71,29.71,0,0,0,5.61.72">
+                                                                                                </path>
+                                                                                                <path class="a"
+                                                                                                    d="M24.76,12.63a2.91,2.91,0,0,1,3.76-.72">
+                                                                                                </path>
+                                                                                                <path class="a"
+                                                                                                    d="M15.37,14.36a2.91,2.91,0,0,1,3.76-.71">
+                                                                                                </path>
+                                                                                                <path class="a"
+                                                                                                    d="M25.92,16.07C24.47,18.32,23,17,22.42,16c-.09,1.34-.94,3.11-2.91,1.34">
+                                                                                                </path>
+                                                                                                <path class="a"
+                                                                                                    d="M28.77,14a3.79,3.79,0,0,0,2.31-.57">
+                                                                                                </path>
+                                                                                                <path class="a"
+                                                                                                    d="M29,15.27A4.66,4.66,0,0,0,31.51,15">
+                                                                                                </path>
+                                                                                                <path class="a"
+                                                                                                    d="M28.77,16.44a2.86,2.86,0,0,0,2.45,0">
+                                                                                                </path>
+                                                                                                <path class="a"
+                                                                                                    d="M16.17,16.74a3.82,3.82,0,0,1-2.37.17">
+                                                                                                </path>
+                                                                                                <path class="a"
+                                                                                                    d="M16.33,18.06a4.6,4.6,0,0,1-2.46.47">
+                                                                                                </path>
+                                                                                                <path class="a"
+                                                                                                    d="M16.93,19.1a2.87,2.87,0,0,1-2.33.76">
+                                                                                                </path>
+                                                                                                <circle class="b"
+                                                                                                    cx="22.21"
+                                                                                                    cy="15.16" r="0.75">
+                                                                                                </circle>
+                                                                                                <path class="a"
+                                                                                                    d="M12.93,11.91C13.8,10.5,15,9.39,17.67,8.06">
+                                                                                                </path>
+                                                                                                <path class="a"
+                                                                                                    d="M24.6,6.57A8.35,8.35,0,0,1,30,8.24">
+                                                                                                </path>
+                                                                                            </g>
+                                                                                        </svg>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <span>Enviar</span>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div id="message"
+                                                                        style="width: 100%; text-align: center; margin-top: 15px; font-weight: bold; min-height: 20px;">
+                                                                    </div>
+                                                                </form>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="RightFormulario">
+                                                    <img src="https://i.ibb.co/fGppd2dC/Pink-Right.png" alt="Derecha"
+                                                        border="0" class="ImagenDerecha">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <table id="FAQ" class="PreguntasFrecuentes">
+                        <tr>
+                            <td>
+                                <div class="ContenedorFAQ">
+                                    <h1 class="H1FAQ">
+                                        Preguntas Frecuentes
+                                    </h1>
+                                    <div class="faq">
+                                        <div class="faq-item" onclick="toggleFaq(this)">
+                                            <div class="faq-question">¿Cuál es el código de vestimenta?</div>
+                                            <div class="faq-toggle">+</div>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <p>Para esta ocasión tan especial, les pedimos un <span
+                                                    style="color: #e473b1;">código de vestimenta formal</span>.
+                                                Esto significa que pueden elegir prendas elegantes como <span
+                                                    style="color: #e473b1;">trajes de vestir</span>,
+                                                conjuntos formales con corbata o moño, <span
+                                                    style="color: #e473b1;">vestidos de cóctel/largos</span>.
+                                                <br> Hemos creado un tablero en Pinterest para darles algunas ideas e
+                                                inspiración.
+                                                ¡Pueden verlo en el siguiente <a class="APinterest"
+                                                    style="color: #51cddb; font-weight:bold"
+                                                    href="https://pin.it/4VEiJteHH">enlace!</a>
+
+                                                <br> Solo les pedimos que eviten los tonos blancos y colores muy claros.
+                                            </p>
+                                        </div>
+
+                                        <div class="faq-item" onclick="toggleFaq(this)">
+                                            <div class="faq-question">¿Hay Parking en el lugar?</div>
+                                            <div class="faq-toggle">+</div>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <p>¡Sí!, Habrá <span style="color: #e473b1;">valet parking gratuito</span>
+                                                en el lugar. ¡Así podrán divertirse sin preocuparse por nada!</p>
+                                        </div>
+
+                                        <div class="faq-item" onclick="toggleFaq(this)">
+                                            <div class="faq-question">¿Cuál será el itinerario del evento?</div>
+                                            <div class="faq-toggle">+</div>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <p>¡Esa es una excelente pregunta! Estamos revisando
+                                                cada detalle para que todo sea perfecto. Por ahora, les
+                                                pedimos que <span style="color: #e473b1;">estén atentos a las próximas
+                                                    actualizaciones</span> en esta misma
+                                                página.</p>
+                                        </div>
+
+                                        <div class="faq-item" onclick="toggleFaq(this)">
+                                            <div class="faq-question">¿Puedo llevar a alguien?</div>
+                                            <div class="faq-toggle">+</div>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <p>Queremos que este día sea íntimo y especial, celebrando con las personas
+                                                más cercanas a nosotros. Por eso, el acceso a la boda
+                                                está <span style="color: #e473b1;">reservado exclusivamente</span> para
+                                                quienes recibieron un código RSVP y hayan
+                                                <span style="color: #e473b1;">confirmado su asistencia</span>.
+                                                <br> Les recordamos que, para poder acceder al recinto, cada invitado
+                                                deberá figurar en nuestra lista de confirmados.
+                                            </p>
+                                        </div>
+
+                                        <div class="faq-item" onclick="toggleFaq(this)">
+                                            <div class="faq-question">¿Se permiten niños?</div>
+                                            <div class="faq-toggle">+</div>
+                                        </div>
+                                        <div class="faq-answer">
+                                            <p>Hemos decidido que nuestra boda sea una celebración <span
+                                                    style="color: #e473b1;">solo para adultos</span>,
+                                                ya que el lugar y el ambiente no son los más adecuados para niños o
+                                                bebés.
+                                                <br>Esperamos que esto les permita disfrutar plenamente del festejo con
+                                                nosotros.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <script>
+                        function toggleFaq(element) {
+                            const answer = element.nextElementSibling;
+                            const toggle = element.querySelector('.faq-toggle');
+                            const isOpen = answer.classList.contains('open');
+
+                            // Cierra todas
+                            document.querySelectorAll('.faq-answer').forEach(el => el.classList.remove('open'));
+                            document.querySelectorAll('.faq-toggle').forEach(el => el.textContent = '+');
+
+                            if (!isOpen) {
+                                answer.classList.add('open');
+                                toggle.textContent = '–';
+                            }
+                        }
+                    </script>
+
+
+                    <table class="Contacto" style="width: 100%; border-spacing: 0; text-align: center;">
+                        <tr>
+                            <td colspan="2">
+                                <h1 class="H1Contacto">
+                                    Contacto
+                                </h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="TDCards" style="padding: 20px;">
+                                <div class="card">
+                                    <div class="card-inner">
+                                        <!-- Frente -->
+                                        <div class="card-front FichaContacto">
+                                            <p class="TextoContacto" style="padding-top: 9%;">Eduardo
+                                            </p>
+                                            <img class="NekoIMG" src="/Neko1.png" alt="">
+                                        </div>
+                                        <!-- Dorso -->
+                                        <div class="card-back FichaContacto">
+                                            <p class="TextoContactoCards">🤵🏾 Tambien conocido como Lalo</p>
+                                            <p class="TextoContactoCards"></p>
+                                            <p class="TextoContactoCards" style="margin: 0px;">(+34) 685-703-622</p>
+                                            <p class="TextoContactoCards" style="margin: 0px;"><a class="insta"
+                                                    style="color: #51cddb; font-weight:bold"
+                                                    href="https://www.instagram.com/ellalo_inmadrid/">@ellalo_inmadrid</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td class="TDCards" style="padding: 20px;">
+                                <div class="card">
+                                    <div class="card-inner">
+                                        <div class="card-front FichaContacto">
+                                            <p class="TextoContacto" style="padding-top: 9%;">Karla
+                                            </p>
+                                            <img class="NekoIMG" src="/Neko2.png" alt="">
+                                        </div>
+                                        <div class="card-back FichaContacto">
+                                            <p class="TextoContactoCards">👰🏽‍♀️ Karla *nunca me llames por mi segundo
+                                                nombre*</p>
+                                            <p class="TextoContactoCards"></p>
+                                            <p class="TextoContactoCards" style="margin: 0px;">(+34) 625-830-666</p>
+                                            <p class="TextoContactoCards" style="margin: 0px;"><a class="insta"
+                                                    style="color: #51cddb; font-weight:bold"
+                                                    href="https://www.instagram.com/krawr_uwu/">@krawr_uwu</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td class="TDCards" style="padding: 20px;">
+                                <div class="card">
+                                    <div class="card-inner">
+                                        <div class="card-front FichaContacto">
+                                            <p class="TextoContacto" style="padding-top: 9%;">Wedding Planner</p>
+                                            <img class="NekoIMG" src="/Neko3.png" alt="">
+                                        </div>
+                                        <div class="card-back FichaContacto">
+                                            <p class="TextoContactoCards">🧑🏽‍💼 Soy Yahir</p>
+                                            <p class="TextoContactoCards"></p>
+                                            <p class="TextoContactoCards" style="margin: 0px;">(+52) 777-612-6623</p>
+                                            <p class="TextoContactoCards" style="margin: 0px;"><a class="insta"
+                                                    style="color: #51cddb; font-weight:bold"
+                                                    href="https://www.instagram.com/tubodaen_cuerna/">@tubodaen_cuerna</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+                    <script>
+                        document.querySelectorAll(".card").forEach(card => {
+                            card.addEventListener("click", () => {
+                                card.classList.toggle("is-flipped");
+                            });
+                        });
+                    </script>
+
+
+                    <table id="Alojamiento" class="Hotel" style="width: 100%; border-spacing: 0; text-align: center;">
+                        <tr>
+                            <td colspan="2">
+                                <div class="DivHotel">
+                                    <p class="PHotel1">
+                                        ¡Sabemos que algunos de ustedes vienen de lejos para acompañarnos en esta
+                                        aventura.
+                                        Aquí les dejamos algunas <span style="color: #e473b1;">sugerencias de
+                                            alojamiento</span> cercano al Jardín Santa
+                                        Bárbara,
+                                        para que su estancia sea cómoda y puedan disfrutar al máximo sin preocuparse por
+                                        el
+                                        regreso.
+                                    </p>
+
+                                    <p class="PHotel1" style="font-weight: bold;">
+                                        ¡Tenemos Muchas opciones Según tu presupuesto!
+                                    </p>
+
+                                    <p class="PHotel2">
+                                        <span style="font-weight: bolder;">Hotel Quinta Mina:</span> <br><br>
+                                        Una excelente opción para quienes desean estar muy cerca del lugar del evento,
+                                        ya que se encuentra justo a un costado del jardín. <br>
+                                        El hotel dispone de un <span style="color: #e473b1; font-weight:bold">número
+                                            limitado de habitaciones</span>, con capacidad para hospedar hasta <span
+                                            style="color: #e473b1; font-weight:bold">cuatro personas por
+                                            habitación</span>. <br>
+                                        La tarifa cubre el hospedaje por todo el fin de semana e incluye desayuno
+                                        diario, así como un cóctel de celebración por la noche.
+                                        <br>
+                                        <!-- <span style="color: #51cddb; font-weight:bold">Reserva AQUÍ</span> -->
+                                        <a class="AReserva" style="color: #51cddb; font-weight:bold"
+                                            href="https://hospedaje.ramirezgastronomia.com/productos/karla-barajas-eduardo-tellez-13-dic-2025-anticipo-de-1-habitacion-en-quinta-mina-sb-el-resto-se-paga-a-la-llegada-en-efectivo-o-transferencia/">Reserva
+                                            Aquí</a>
+                                    </p>
+
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d863.0709055169916!2d-99.15839651306884!3d18.869951648461416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce75544acdee97%3A0xd8cb80fb847a9dc0!2sHotel%20Quinta%20Mina!5e0!3m2!1ses!2ses!4v1755361476526!5m2!1ses!2ses"
+                                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+                                    <p class="PHotel2" style="">
+                                        <span style="font-weight: bolder;">Grand Fiesta Americana Sumiya
+                                            Cuernavaca:</span> <br><br>
+                                        Si deseas hospedarte en un lugar con <span
+                                            style="color: #e473b1; font-weight:bold">buen servicio</span>y a una
+                                        distancia razonable del evento, este hotel es una excelente opción. Además,
+                                        hemos gestionado un código de descuento especial para ti, que podrás utilizar al
+                                        momento de hacer tu reserva.<br>
+                                        <a class="AReserva" style="color: #51cddb; font-weight:bold"
+                                            href="https://www.fiestamericanatravelty.com/grand-fiesta-americana/">Reserva
+                                            Aquí</a>
+                                    </p>
+
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2022.8289669724302!2d-99.19206457761143!3d18.89128211157306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cddf6051f1f437%3A0x68563ce504ce6185!2sGrand%20Fiesta%20Americana%20Sumiya%20Cuernavaca!5e0!3m2!1ses!2ses!4v1755361574638!5m2!1ses!2ses"
+                                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                                    <p class="PHotel2" style="">
+                                        <span style="font-weight: bolder;">HACIENDA COCOYOC:</span> <br><br>
+                                        También contamos con esta opción de hotel, un poco <span
+                                            style="color: #e473b1; font-weight:bold">más alejada</span>, pero con un
+                                        <span style="color: #e473b1; font-weight:bold">excelente servicio</span>.<br>
+                                        Hemos gestionado un código de descuento especial para quienes deseen hacer su
+                                        reserva. <br>
+                                        <a class="AReserva" style="color: #51cddb; font-weight:bold"
+                                            href="https://hcocoyoc.com/habitaciones/">Reserva
+                                            Aquí</a>
+                                    </p>
+
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6591.384532361617!2d-98.98249828477088!3d18.88172863300372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce6dde90f3c08d%3A0x2265bab3da07fee!2sHACIENDA%20COCOYOC%20HOTEL!5e0!3m2!1ses!2ses!4v1755361621743!5m2!1ses!2ses"
+                                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <table id="Transporte" class="Transporte"
+                        style="width: 100%; border-spacing: 0; text-align: center;">
+                        <tr>
+                            <td colspan="2">
+                                <div class="DivHotel">
+                                    <p class="PHotel1" style="margin-bottom: 0px;padding-bottom: 0px;">
+                                        Sabemos que algunos vienen de lejos o simplemente prefieren viajar sin
+                                        preocupaciones. Por eso, hemos organizado un <span
+                                            style="color: #e473b1;">servicio de transporte gratuito</span>
+                                        para acompañarte a nuestra celebración.
+                                        <br><br>
+                                        El traslado será cómodo y seguro, <span style="color: #e473b1;">saliendo desde
+                                            Antara Polanco, CDMX</span> el 12 de
+                                        diciembre, y regresando el 14 de Diciembre.
+                                        <br><br>
+                                        ¡Así podrás relajarte y disfrutar del viaje desde el primer momento!
+                                        <br><br>
+                                        <br><br>
+                                        <span
+                                            style="font-weight: bolder; padding: 5% 0; color: #fcc85e; line-height: 2.2em">¡IMPORTANTE
+                                            ESTA OPCIÓN ES
+                                            EXCLUSIVA PARA QUIENES SE HOSPEDEN EN EL HOTEL QUINTA MINA!</span>
+                                        <br><br>
+                                        <br><br>
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table class="FormTransporte"
+                        style="width: 100%; border-spacing: 0; text-align: center; background: #f4e7ee">
+                        <tr>
+                            <td colspan="2">
+                                <div class="DivFormTransporte">
+                                    <h1>Transporte</h1>
+                                    <form class="FormularioTransporte" id="transporteForm" target="_self">
+                                        <div class="form-group">
+                                            <label for="TransporteRSVP" class="Codigo">*Código RSVP:</label>
+                                            <input type="text" name="TransporteRSVP" id="TransporteRSVP" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="TransporteNombre" class="Codigo">*Nombre:</label>
+                                            <input type="text" name="TransporteNombre" id="TransporteNombre" required
+                                                readonly>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="TransporteEmail" class="Codigo">*Email:</label>
+                                            <input type="email" name="TransporteEmail" id="TransporteEmail" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="TransporteTelefono" class="Codigo">*Número de Teléfono:</label>
+                                            <input type="tel" name="TransporteTelefono" id="TransporteTelefono"
+                                                required>
+                                        </div>
+                                        <div
+                                            style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
+                                            <button type="submit" id="transporteSubmitBtn">
+                                                <div class="svg-wrapper-1">
+                                                    <div class="svg-wrapper">
+                                                        <svg width="70px" height="70px" viewBox="0 0 48.00 48.00"
+                                                            xmlns="http://www.w3.org/2000/svg" fill="#e473b1"
+                                                            stroke="#e473b1" stroke-width="0.768">
+                                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
+                                                                stroke-linejoin="round" stroke="#CCCCCC"
+                                                                stroke-width="1.152">
+                                                                <defs>
+                                                                    <style>
+                                                                        .a {
+                                                                            fill: none;
+                                                                            stroke: #e473b1;
+                                                                            stroke-linecap: round;
+                                                                            stroke-linejoin: round;
+                                                                        }
+
+                                                                        .b {
+                                                                            fill: #e473b1;
+                                                                        }
+                                                                    </style>
+                                                                </defs>
+                                                                <path class="a"
+                                                                    d="M30.37,23.32a13.6,13.6,0,0,0,3-8.37A9.16,9.16,0,0,0,30,8.24S29.73,5,28.7,4.56s-4.1,2-4.1,2-5,.21-6.93,1.49c0,0-4.44-1.06-5-.29s.26,4.14.26,4.14a9.1,9.1,0,0,0-1.45,5.17c0,3.25,4.91,7.83,4.91,7.83a21.21,21.21,0,0,0-3.12,10.43c0,4.27,2.08,5.3,2.08,5.3">
+                                                                </path>
+                                                                <path class="a"
+                                                                    d="M17.25,29.61,20.15,41s-1.24,2.52,2.57,2.52,3-3.16,1.92-3.59l-1.88-7.22">
+                                                                </path>
+                                                                <path class="a"
+                                                                    d="M29.13,38.07c-2,.81-2.74,3.93.81,3.93s4.92-4,4.92-6.75a29.07,29.07,0,0,0-1.24-6.75,4.25,4.25,0,0,0,1.24-1.84c.17-.9,1.11-10,1.19-10.39a4.27,4.27,0,0,0,.47-1.49,2.65,2.65,0,0,0-3.49-2">
+                                                                </path>
+                                                                <path class="a" d="M25.23,40.44a19,19,0,0,1,2.25-.27">
+                                                                </path>
+                                                                <path class="a"
+                                                                    d="M20,41.57a6.68,6.68,0,0,1-2.82.43c-1.07,0-3.5-1.77-.15-3.91">
+                                                                </path>
+                                                                <circle class="a" cx="22.93" cy="27.96" r="2.51">
+                                                                </circle>
+                                                                <path class="a"
+                                                                    d="M23.89,25.62a37.14,37.14,0,0,0,5.88-.71"></path>
+                                                                <path class="a"
+                                                                    d="M16.39,24.91a29.71,29.71,0,0,0,5.61.72"></path>
+                                                                <path class="a"
+                                                                    d="M24.76,12.63a2.91,2.91,0,0,1,3.76-.72"></path>
+                                                                <path class="a"
+                                                                    d="M15.37,14.36a2.91,2.91,0,0,1,3.76-.71"></path>
+                                                                <path class="a"
+                                                                    d="M25.92,16.07C24.47,18.32,23,17,22.42,16c-.09,1.34-.94,3.11-2.91,1.34">
+                                                                </path>
+                                                                <path class="a" d="M28.77,14a3.79,3.79,0,0,0,2.31-.57">
+                                                                </path>
+                                                                <path class="a" d="M29,15.27A4.66,4.66,0,0,0,31.51,15">
+                                                                </path>
+                                                                <path class="a" d="M28.77,16.44a2.86,2.86,0,0,0,2.45,0">
+                                                                </path>
+                                                                <path class="a"
+                                                                    d="M16.17,16.74a3.82,3.82,0,0,1-2.37.17"></path>
+                                                                <path class="a" d="M16.33,18.06a4.6,4.6,0,0,1-2.46.47">
+                                                                </path>
+                                                                <path class="a" d="M16.93,19.1a2.87,2.87,0,0,1-2.33.76">
+                                                                </path>
+                                                                <circle class="b" cx="22.21" cy="15.16" r="0.75">
+                                                                </circle>
+                                                                <path class="a"
+                                                                    d="M12.93,11.91C13.8,10.5,15,9.39,17.67,8.06">
+                                                                </path>
+                                                                <path class="a" d="M24.6,6.57A8.35,8.35,0,0,1,30,8.24">
+                                                                </path>
+                                                            </g>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <span>Enviar</span>
+                                            </button>
+                                        </div>
+                                        <div id="transporteMessage" style="margin-top: 15px; font-weight: bold;"></div>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <script>
+                        // Variables para el formulario de RSVP
+                        const codigoRsvpInput = document.getElementById('CodigoRSVP');
+                        const saludoPersonalizado = document.getElementById('saludo-personalizado');
+                        const asistenciaSection = document.getElementById('asistencia-form-section');
+                        const form = document.getElementById('confirmationForm');
+                        const messageDiv = document.getElementById('message');
+                        const asistenciaRadioBtns = document.querySelectorAll('input[name="Asistencia"]');
+                        const alergiasSection = document.querySelector('label[for="Alergias"]').closest('.form-group');
+
+                        // Variables para el formulario de transporte
+                        const transporteForm = document.getElementById('transporteForm');
+                        const codigoTransporteInput = document.getElementById('TransporteRSVP');
+                        const nombreTransporteInput = document.getElementById('TransporteNombre');
+                        const emailTransporteInput = document.getElementById('TransporteEmail');
+                        const telefonoTransporteInput = document.getElementById('TransporteTelefono');
+                        const transporteMessage = document.getElementById('transporteMessage');
+                        const transporteSubmitBtn = document.getElementById('transporteSubmitBtn');
+
+                        // URL de tu script de Google Apps Script (es la misma para ambos formularios)
+                        const scriptUrl = 'https://script.google.com/macros/s/AKfycbzr0BVM3kWamfwrQIr8IhsY_EnJHJD4CgbOJdivB74_gSu1P6uaL-cZKHW9n6LQF2eo/exec';
+
+                        // Función para buscar nombre por código (Formulario RSVP)
+                        async function buscarNombrePorCodigo() {
+                            const code = codigoRsvpInput.value.trim();
+                            messageDiv.textContent = '';
+
+                            if (!code) {
+                                asistenciaSection.style.display = 'none';
+                                saludoPersonalizado.textContent = '';
+                                return;
+                            }
+
+                            saludoPersonalizado.textContent = 'Buscando tu código...';
+                            saludoPersonalizado.style.color = '#e473b1';
+                            asistenciaSection.style.display = 'none';
+
+                            try {
+                                // Se envía el parámetro 'action=rsvp' para que el Apps Script sepa qué validación usar
+                                const response = await fetch(`${scriptUrl}?code=${code}&action=rsvp`);
+                                const data = await response.json();
+
+                                if (data.success) {
+                                    saludoPersonalizado.textContent = `¡Hola, ${data.name}!`;
+                                    saludoPersonalizado.style.color = 'black';
+                                    asistenciaSection.style.display = 'block';
+                                } else {
+                                    saludoPersonalizado.textContent = data.message;
+                                    saludoPersonalizado.style.color = 'red';
+                                    asistenciaSection.style.display = 'none';
+                                }
+                            } catch (error) {
+                                saludoPersonalizado.textContent = 'Error de conexión. Intenta de nuevo.';
+                                saludoPersonalizado.style.color = 'red';
+                                console.error('Error al buscar nombre:', error);
+                            }
+                        }
+
+                        // Lógica para mostrar/ocultar el campo de alergias
+                        asistenciaRadioBtns.forEach(radio => {
+                            radio.addEventListener('change', (event) => {
+                                if (event.target.value === 'Si') {
+                                    alergiasSection.style.display = 'block';
+                                } else {
+                                    alergiasSection.style.display = 'none';
+                                }
+                            });
+                        });
+
+                        // Función para enviar formulario de RSVP con 'no-cors'
+                        form.addEventListener('submit', function (event) {
+                            event.preventDefault();
+                            const asistenciaRadio = document.querySelector('input[name="Asistencia"]:checked');
+
+                            if (!asistenciaRadio) {
+                                messageDiv.textContent = 'Por favor, selecciona si asistirás o no.';
+                                messageDiv.style.color = 'red';
+                                return;
+                            }
+
+                            messageDiv.textContent = 'Enviando tu confirmación...';
+                            messageDiv.style.color = '#e473b1';
+
+                            const postData = {
+                                action: 'rsvp',
+                                code: codigoRsvpInput.value.trim(),
+                                asistencia: asistenciaRadio.value,
+                                alergias: document.getElementById('Alergias').value
+                            };
+
+                            fetch(scriptUrl, {
+                                method: 'POST',
+                                mode: 'no-cors',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(postData),
+                            })
+                                .then(() => {
+                                    messageDiv.textContent = 'Hemos recibido tu respuesta.';
+                                    messageDiv.style.color = 'green';
+                                    form.reset();
+                                    codigoRsvpInput.value = '';
+                                    asistenciaSection.style.display = 'none';
+                                    saludoPersonalizado.textContent = '¡Gracias!';
+                                    saludoPersonalizado.style.color = 'black';
+                                })
+                                .catch(error => {
+                                    messageDiv.textContent = 'Error de conexión. Por favor, revisa tu internet e intenta de nuevo.';
+                                    messageDiv.style.color = 'red';
+                                    console.error('Error de red al enviar:', error);
+                                });
+                        });
+
+                        // Función para validar el código (Formulario Transporte)
+                        async function validarCodigoTransporte() {
+                            const code = codigoTransporteInput.value.trim();
+                            transporteMessage.textContent = '';
+
+                            if (!code) {
+                                nombreTransporteInput.value = '';
+                                transporteSubmitBtn.disabled = true;
+                                return;
+                            }
+
+                            transporteMessage.textContent = 'Validando código...';
+                            transporteMessage.style.color = '#e473b1';
+                            transporteSubmitBtn.disabled = true;
+
+                            try {
+                                // Se envía el parámetro 'action=transporte' para que el Apps Script sepa qué validación usar
+                                const response = await fetch(`${scriptUrl}?code=${code}&action=transporte`);
+                                const data = await response.json();
+
+                                if (data.success) {
+                                    nombreTransporteInput.value = data.name;
+                                    transporteMessage.textContent = `¡Hola, ${data.name}! Por favor, completa el resto de los datos.`;
+                                    transporteMessage.style.color = 'black';
+                                    transporteSubmitBtn.disabled = false;
+                                } else {
+                                    nombreTransporteInput.value = '';
+                                    transporteMessage.textContent = data.message;
+                                    transporteMessage.style.color = 'red';
+                                    transporteSubmitBtn.disabled = true;
+                                }
+                            } catch (error) {
+                                transporteMessage.textContent = 'Error de conexión. Revisa que la URL del script sea correcta.';
+                                transporteMessage.style.color = 'red';
+                                console.error('Error al validar código:', error);
+                            }
+                        }
+
+                        // Función para enviar formulario de Transporte con 'no-cors'
+                        transporteForm.addEventListener('submit', function (event) {
+                            event.preventDefault();
+
+                            transporteMessage.textContent = 'Apuntándote a la lista...';
+                            transporteMessage.style.color = '#e473b1';
+                            transporteSubmitBtn.disabled = true;
+
+                            const postData = {
+                                action: 'transporte',
+                                code: codigoTransporteInput.value.trim(),
+                                email: emailTransporteInput.value.trim(),
+                                telefono: telefonoTransporteInput.value.trim()
+                            };
+
+                            fetch(scriptUrl, {
+                                method: 'POST',
+                                mode: 'no-cors',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(postData),
+                            })
+                                .then(() => {
+                                    transporteMessage.textContent = '¡Gracias por apuntarte! Hemos recibido tu respuesta.';
+                                    transporteMessage.style.color = 'green';
+                                    transporteForm.reset();
+                                    nombreTransporteInput.value = '';
+                                    transporteSubmitBtn.disabled = false;
+                                })
+                                .catch(error => {
+                                    transporteMessage.textContent = 'Error de red al enviar. Por favor, intenta de nuevo.';
+                                    transporteMessage.style.color = 'red';
+                                    transporteSubmitBtn.disabled = false;
+                                    console.error('Error al enviar formulario:', error);
+                                });
+                        });
+
+                        // Event listeners
+                        codigoRsvpInput.addEventListener('blur', buscarNombrePorCodigo);
+                        codigoTransporteInput.addEventListener('blur', validarCodigoTransporte);
+                    </script>
+
+                    <!-- CONTENIDO ARRIBA, ABAJO NO TOCAR, CIERRE DE ETIQUETAS, SIRVE PARA AJUSTAR TAMAÑOS -->
+                </td>
+                <td style="padding: 0"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="sakura">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+
+</body>
+
+</html>

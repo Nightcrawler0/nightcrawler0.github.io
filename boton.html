@@ -1,0 +1,75 @@
+<style>
+  .card {
+  width: 100%;
+  height: 300px;         /* 🔑 altura fija o relativa */
+  perspective: 1000px;   /* activa efecto 3D */
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* oculta el reverso */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-front {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-back {
+  background: #395a9d;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+</style>
+
+<td style="width: 30%; padding: 20px;">
+  <div class="card">
+    <div class="card-inner">
+      <!-- Frente -->
+      <div class="card-front FichaContacto">
+        <p class="TextoContacto">Eduardo</p>
+        <img class="NekoIMG" src="/Neko1.png" alt="">
+        <p class="TextoContacto">666-666-666</p>
+        <p class="TextoContacto">@Blah_blah</p>
+      </div>
+      <!-- Dorso -->
+      <div class="card-back FichaContacto">
+        <p class="TextoContacto">👋 Hola! Soy Eduardo</p>
+        <p class="TextoContacto">Aquí puedes poner más información</p>
+      </div>
+    </div>
+  </div>
+</td>
+<script>
+  document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", () => {
+      card.classList.toggle("is-flipped");
+    });
+  });
+</script>
