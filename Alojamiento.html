@@ -378,7 +378,7 @@
         gap: 30px;
         font-family: Arial, sans-serif;
         margin: 15% auto;
-        padding: 10% 0;
+        padding: 5% 0;
         border-bottom: 5px solid #fcc85e;
         border-top: 5px solid #fcc85e;
     }
@@ -397,7 +397,7 @@
     }
 
     .countdown-item .label {
-        font-size: 0.9em;
+        font-size: 1.2em;
         color: #e196bf;
         text-transform: uppercase;
         font-weight: bold;
@@ -2039,20 +2039,7 @@
                                                     </table>
                                                     <div class="countdown-container">
                                                         <div class="countdown-item">
-                                                            <span id="days"></span>
-                                                            <div class="label">Días</div>
-                                                        </div>
-                                                        <div class="countdown-item">
-                                                            <span id="hours"></span>
-                                                            <div class="label">horas</div>
-                                                        </div>
-                                                        <div class="countdown-item">
-                                                            <span id="minutes"></span>
-                                                            <div class="label">minutos</div>
-                                                        </div>
-                                                        <div class="countdown-item">
-                                                            <span id="seconds"></span>
-                                                            <div class="label">segundos</div>
+                                                            <div class="label">Alojamiento</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2071,76 +2058,12 @@
                     </table>
 
 
-
-                    <script defer>
-                        function startCountdown(targetDate) {
-                            const daysSpan = document.getElementById('days');
-                            const hoursSpan = document.getElementById('hours');
-                            const minutesSpan = document.getElementById('minutes');
-                            const secondsSpan = document.getElementById('seconds');
-
-                            function updateCountdown() {
-                                const now = new Date().getTime();
-                                const distance = targetDate - now;
-
-                                // Calculate time components
-                                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                                // Display the results, ensuring they don't show negative numbers
-                                daysSpan.textContent = Math.max(0, days);
-                                hoursSpan.textContent = Math.max(0, hours);
-                                minutesSpan.textContent = Math.max(0, minutes);
-                                secondsSpan.textContent = Math.max(0, seconds);
-
-                                // If the countdown is over, display a message
-                                if (distance < 0) {
-                                    clearInterval(countdownInterval);
-                                    document.querySelector('.countdown-container').innerHTML = "<h2>¡El evento ha comenzado!</h2>";
-                                }
-                            }
-
-                            // Update the countdown every 1 second
-                            const countdownInterval = setInterval(updateCountdown, 1000);
-
-                            // Initial call to display the countdown immediately
-                            updateCountdown();
-                        }
-
-                        // --- Define la fecha objetivo en UTC (Coordinated Universal Time) ---
-                        // Para "13 de diciembre de 2025, 23:59:59 en America/Mexico_City (UTC-6)",
-                        // esto equivale a las 05:59:59 AM del 14 de diciembre de 2025 UTC.
-                        // Parámetros de Date.UTC(): año, mes (0-11), día, hora, minuto, segundo
-                        const targetDate = new Date(Date.UTC(2025, 11, 14, 5, 59, 59)).getTime();
-                        // (Recuerda que los meses son de 0 a 11, así que diciembre es 11)
-
-                        // Inicia el contador cuando el script se carga
-                        startCountdown(targetDate);
-                    </script>
-
-
                     <table class="TableSubmenu">
                         <tr>
                             <td class="">
                                 <div class="Submenu">
                                     <div class="DivsMenu">
                                         <a href="./index.html">HOME</a>
-                                    </div>
-                                    <div class="DivsMenu">
-                                        <a href="./index.html#NuestraHistoria">NOSOTROS</a>
-                                    </div>
-                                    <div class="DivsMenu">
-                                        <a href="./index.html#Lugar">LUGAR</a>
-
-                                    </div>
-                                    <div class="DivsMenu">
-                                        <a href="./index.html#RSPV">RSPV</a>
-
-                                    </div>
-                                    <div class="DivsMenu">
-                                        <a href="./index.html#FAQ">FAQ</a>
                                     </div>
                                 </div>
                             </td>
@@ -2193,12 +2116,37 @@
 
 
                                     <p class="PHotel2" style="">
+                                        <span style="font-weight: bolder;">ONE Cuernavaca:</span> <br><br>
+                                        Si buscas una opción de hospedaje que combine un precio accesible con la
+                                        cercanía al evento, el Hotel One es tu mejor elección. Ubicado a solo 25 minutos
+                                        en coche
+                                        del jardín, es <span style="color: #e473b1; font-weight:bold">la alternativa más
+                                            económica</span> para tu estadía. Además, hemos
+                                        conseguido un descuento especial para ti. Solo tienes que ingresar el código
+                                        <span style="color: #fcc85e; font-weight:bold">G1V0A4</span> al hacer tu reserva
+                                        para aprovechar esta tarifa reducida durante las
+                                        fechas
+                                        del evento.<br>
+                                        <a class="AReserva" style="color: #51cddb; font-weight:bold"
+                                            href="https://www.fiestamericanatravelty.com/one-hoteles/">Reserva
+                                            Aquí</a>
+                                    </p>
+
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60383.500498411595!2d-99.27649497985837!3d18.932775932320737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cddf0b7cd67743%3A0xa5dbe10ac9e6c66e!2sone%20Cuernavaca!5e0!3m2!1ses-419!2ses!4v1755704669485!5m2!1ses-419!2ses"
+                                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+                                    <p class="PHotel2" style="">
                                         <span style="font-weight: bolder;">Grand Fiesta Americana Sumiya
                                             Cuernavaca:</span> <br><br>
                                         Si deseas hospedarte en un lugar con <span
-                                            style="color: #e473b1; font-weight:bold">buen servicio</span>y a una
+                                            style="color: #e473b1; font-weight:bold">buen servicio</span> y a una
                                         distancia razonable del evento, este hotel es una excelente opción. Además,
-                                        hemos gestionado un código de descuento especial para ti, que podrás utilizar al
+                                        hemos gestionado el código de descuento <span
+                                            style="color: #fcc85e; font-weight:bold">G1V09K</span> especial para ti, que
+                                        podrás utilizar al
                                         momento de hacer tu reserva.<br>
                                         <a class="AReserva" style="color: #51cddb; font-weight:bold"
                                             href="https://www.fiestamericanatravelty.com/grand-fiesta-americana/">Reserva
@@ -2215,8 +2163,11 @@
                                         También contamos con esta opción de hotel, un poco <span
                                             style="color: #e473b1; font-weight:bold">más alejada</span>, pero con un
                                         <span style="color: #e473b1; font-weight:bold">excelente servicio</span>.<br>
-                                        Hemos gestionado un código de descuento especial para quienes deseen hacer su
-                                        reserva. <br>
+                                        Además, hemos gestionado un beneficio especial para ustedes. Durante su estadía,
+                                        solo tienen que mencionar nuestros apellidos al momento de la reservación o el
+                                        check-in y el <span style="color: #e473b1; font-weight:bold">desayuno será
+                                            completamente gratis</span> para las mañanas de su
+                                        estancia.<br>
                                         <a class="AReserva" style="color: #51cddb; font-weight:bold"
                                             href="https://hcocoyoc.com/habitaciones/">Reserva
                                             Aquí</a>
