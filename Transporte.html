@@ -378,7 +378,7 @@
         gap: 30px;
         font-family: Arial, sans-serif;
         margin: 15% auto;
-        padding: 10% 0;
+        padding: 5% 0;
         border-bottom: 5px solid #fcc85e;
         border-top: 5px solid #fcc85e;
     }
@@ -397,7 +397,7 @@
     }
 
     .countdown-item .label {
-        font-size: 0.9em;
+        font-size: 1.2em;
         color: #e196bf;
         text-transform: uppercase;
         font-weight: bold;
@@ -2041,20 +2041,7 @@
                                                     </table>
                                                     <div class="countdown-container">
                                                         <div class="countdown-item">
-                                                            <span id="days"></span>
-                                                            <div class="label">Días</div>
-                                                        </div>
-                                                        <div class="countdown-item">
-                                                            <span id="hours"></span>
-                                                            <div class="label">horas</div>
-                                                        </div>
-                                                        <div class="countdown-item">
-                                                            <span id="minutes"></span>
-                                                            <div class="label">minutos</div>
-                                                        </div>
-                                                        <div class="countdown-item">
-                                                            <span id="seconds"></span>
-                                                            <div class="label">segundos</div>
+                                                            <div class="label">Transporte</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2072,77 +2059,12 @@
                         </tbody>
                     </table>
 
-
-
-                    <script defer>
-                        function startCountdown(targetDate) {
-                            const daysSpan = document.getElementById('days');
-                            const hoursSpan = document.getElementById('hours');
-                            const minutesSpan = document.getElementById('minutes');
-                            const secondsSpan = document.getElementById('seconds');
-
-                            function updateCountdown() {
-                                const now = new Date().getTime();
-                                const distance = targetDate - now;
-
-                                // Calculate time components
-                                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                                // Display the results, ensuring they don't show negative numbers
-                                daysSpan.textContent = Math.max(0, days);
-                                hoursSpan.textContent = Math.max(0, hours);
-                                minutesSpan.textContent = Math.max(0, minutes);
-                                secondsSpan.textContent = Math.max(0, seconds);
-
-                                // If the countdown is over, display a message
-                                if (distance < 0) {
-                                    clearInterval(countdownInterval);
-                                    document.querySelector('.countdown-container').innerHTML = "<h2>¡El evento ha comenzado!</h2>";
-                                }
-                            }
-
-                            // Update the countdown every 1 second
-                            const countdownInterval = setInterval(updateCountdown, 1000);
-
-                            // Initial call to display the countdown immediately
-                            updateCountdown();
-                        }
-
-                        // --- Define la fecha objetivo en UTC (Coordinated Universal Time) ---
-                        // Para "13 de diciembre de 2025, 23:59:59 en America/Mexico_City (UTC-6)",
-                        // esto equivale a las 05:59:59 AM del 14 de diciembre de 2025 UTC.
-                        // Parámetros de Date.UTC(): año, mes (0-11), día, hora, minuto, segundo
-                        const targetDate = new Date(Date.UTC(2025, 11, 14, 5, 59, 59)).getTime();
-                        // (Recuerda que los meses son de 0 a 11, así que diciembre es 11)
-
-                        // Inicia el contador cuando el script se carga
-                        startCountdown(targetDate);
-                    </script>
-
-
                     <table class="TableSubmenu">
                         <tr>
                             <td class="">
                                 <div class="Submenu">
                                     <div class="DivsMenu">
                                         <a href="./index.html">HOME</a>
-                                    </div>
-                                    <div class="DivsMenu">
-                                        <a href="./index.html#NuestraHistoria">NOSOTROS</a>
-                                    </div>
-                                    <div class="DivsMenu">
-                                        <a href="./index.html#Lugar">LUGAR</a>
-
-                                    </div>
-                                    <div class="DivsMenu">
-                                        <a href="./index.html#RSPV">RSPV</a>
-
-                                    </div>
-                                    <div class="DivsMenu">
-                                        <a href="./index.html#FAQ">FAQ</a>
                                     </div>
                                 </div>
                             </td>
@@ -2297,15 +2219,6 @@
                     </table>
 
                     <script>
-                        // Variables para el formulario de RSVP
-                        const codigoRsvpInput = document.getElementById('CodigoRSVP');
-                        const saludoPersonalizado = document.getElementById('saludo-personalizado');
-                        const asistenciaSection = document.getElementById('asistencia-form-section');
-                        const form = document.getElementById('confirmationForm');
-                        const messageDiv = document.getElementById('message');
-                        const asistenciaRadioBtns = document.querySelectorAll('input[name="Asistencia"]');
-                        const alergiasSection = document.querySelector('label[for="Alergias"]').closest('.form-group');
-
                         // Variables para el formulario de transporte
                         const transporteForm = document.getElementById('transporteForm');
                         const codigoTransporteInput = document.getElementById('TransporteRSVP');
@@ -2318,98 +2231,6 @@
                         // URL de tu script de Google Apps Script (es la misma para ambos formularios)
                         const scriptUrl = 'https://script.google.com/macros/s/AKfycbzr0BVM3kWamfwrQIr8IhsY_EnJHJD4CgbOJdivB74_gSu1P6uaL-cZKHW9n6LQF2eo/exec';
 
-                        // Función para buscar nombre por código (Formulario RSVP)
-                        async function buscarNombrePorCodigo() {
-                            const code = codigoRsvpInput.value.trim();
-                            messageDiv.textContent = '';
-
-                            if (!code) {
-                                asistenciaSection.style.display = 'none';
-                                saludoPersonalizado.textContent = '';
-                                return;
-                            }
-
-                            saludoPersonalizado.textContent = 'Buscando tu código...';
-                            saludoPersonalizado.style.color = '#e473b1';
-                            asistenciaSection.style.display = 'none';
-
-                            try {
-                                // Se envía el parámetro 'action=rsvp' para que el Apps Script sepa qué validación usar
-                                const response = await fetch(`${scriptUrl}?code=${code}&action=rsvp`);
-                                const data = await response.json();
-
-                                if (data.success) {
-                                    saludoPersonalizado.textContent = `¡Hola, ${data.name}!`;
-                                    saludoPersonalizado.style.color = 'black';
-                                    asistenciaSection.style.display = 'block';
-                                } else {
-                                    saludoPersonalizado.textContent = data.message;
-                                    saludoPersonalizado.style.color = 'red';
-                                    asistenciaSection.style.display = 'none';
-                                }
-                            } catch (error) {
-                                saludoPersonalizado.textContent = 'Error de conexión. Intenta de nuevo.';
-                                saludoPersonalizado.style.color = 'red';
-                                console.error('Error al buscar nombre:', error);
-                            }
-                        }
-
-                        // Lógica para mostrar/ocultar el campo de alergias
-                        asistenciaRadioBtns.forEach(radio => {
-                            radio.addEventListener('change', (event) => {
-                                if (event.target.value === 'Si') {
-                                    alergiasSection.style.display = 'block';
-                                } else {
-                                    alergiasSection.style.display = 'none';
-                                }
-                            });
-                        });
-
-                        // Función para enviar formulario de RSVP con 'no-cors'
-                        form.addEventListener('submit', function (event) {
-                            event.preventDefault();
-                            const asistenciaRadio = document.querySelector('input[name="Asistencia"]:checked');
-
-                            if (!asistenciaRadio) {
-                                messageDiv.textContent = 'Por favor, selecciona si asistirás o no.';
-                                messageDiv.style.color = 'red';
-                                return;
-                            }
-
-                            messageDiv.textContent = 'Enviando tu confirmación...';
-                            messageDiv.style.color = '#e473b1';
-
-                            const postData = {
-                                action: 'rsvp',
-                                code: codigoRsvpInput.value.trim(),
-                                asistencia: asistenciaRadio.value,
-                                alergias: document.getElementById('Alergias').value
-                            };
-
-                            fetch(scriptUrl, {
-                                method: 'POST',
-                                mode: 'no-cors',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify(postData),
-                            })
-                                .then(() => {
-                                    messageDiv.textContent = 'Hemos recibido tu respuesta.';
-                                    messageDiv.style.color = 'green';
-                                    form.reset();
-                                    codigoRsvpInput.value = '';
-                                    asistenciaSection.style.display = 'none';
-                                    saludoPersonalizado.textContent = '¡Gracias!';
-                                    saludoPersonalizado.style.color = 'black';
-                                })
-                                .catch(error => {
-                                    messageDiv.textContent = 'Error de conexión. Por favor, revisa tu internet e intenta de nuevo.';
-                                    messageDiv.style.color = 'red';
-                                    console.error('Error de red al enviar:', error);
-                                });
-                        });
-
                         // Función para validar el código (Formulario Transporte)
                         async function validarCodigoTransporte() {
                             const code = codigoTransporteInput.value.trim();
@@ -2418,6 +2239,9 @@
                             if (!code) {
                                 nombreTransporteInput.value = '';
                                 transporteSubmitBtn.disabled = true;
+                                emailTransporteInput.disabled = false;
+                                telefonoTransporteInput.disabled = false;
+                                nombreTransporteInput.disabled = false;
                                 return;
                             }
 
@@ -2426,7 +2250,6 @@
                             transporteSubmitBtn.disabled = true;
 
                             try {
-                                // Se envía el parámetro 'action=transporte' para que el Apps Script sepa qué validación usar
                                 const response = await fetch(`${scriptUrl}?code=${code}&action=transporte`);
                                 const data = await response.json();
 
@@ -2434,12 +2257,29 @@
                                     nombreTransporteInput.value = data.name;
                                     transporteMessage.textContent = `¡Hola, ${data.name}! Por favor, completa el resto de los datos.`;
                                     transporteMessage.style.color = 'black';
+
+                                    // habilitar campos por si quedaron deshabilitados antes
+                                    emailTransporteInput.disabled = false;
+                                    telefonoTransporteInput.disabled = false;
+                                    nombreTransporteInput.disabled = true;
                                     transporteSubmitBtn.disabled = false;
                                 } else {
                                     nombreTransporteInput.value = '';
                                     transporteMessage.textContent = data.message;
                                     transporteMessage.style.color = 'red';
-                                    transporteSubmitBtn.disabled = true;
+
+                                    if (data.message.includes("Ya te has apuntado")) {
+                                        // Bloqueo total
+                                        emailTransporteInput.disabled = true;
+                                        telefonoTransporteInput.disabled = true;
+                                        nombreTransporteInput.disabled = true;
+                                        transporteSubmitBtn.disabled = true;
+                                    } else {
+                                        emailTransporteInput.disabled = false;
+                                        telefonoTransporteInput.disabled = false;
+                                        nombreTransporteInput.disabled = false;
+                                        transporteSubmitBtn.disabled = true;
+                                    }
                                 }
                             } catch (error) {
                                 transporteMessage.textContent = 'Error de conexión. Revisa que la URL del script sea correcta.';
@@ -2487,7 +2327,6 @@
                         });
 
                         // Event listeners
-                        codigoRsvpInput.addEventListener('blur', buscarNombrePorCodigo);
                         codigoTransporteInput.addEventListener('blur', validarCodigoTransporte);
                     </script>
 
