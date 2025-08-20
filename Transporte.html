@@ -802,13 +802,47 @@
         left: 0px;
     }
 
+    .SprigatitoDiv {
+        position: relative;
+        width: 100%;
+        height: 100px;
+        overflow: hidden;
+    }
+
     .SprigatitoIMG {
         position: absolute;
         width: 10%;
-        right: 0px;
+        left: 0px;
         bottom: 0px;
     }
 
+    .SprigatitoDiv img {
+        position: absolute;
+        bottom: 0;
+        /* opcional: se quedan alineados abajo */
+        animation: moveAcross 12s linear infinite;
+    }
+
+
+
+    @keyframes moveAcross {
+        0% {
+            transform: translateX(-150%);
+            /* empieza fuera a la izquierda */
+        }
+
+        100% {
+            transform: translateX(900%);
+            /* termina fuera a la derecha */
+        }
+    }
+
+    .SprigatitoIMG1 {
+        position: absolute;
+        width: 10%;
+        left: 6%;
+        bottom: 0px;
+    }
 
     .MalteseDiv {}
 
@@ -2097,6 +2131,10 @@
                                         <br><br>
                                     </p>
                                 </div>
+                                                                <div class="SprigatitoDiv">
+                                    <img class="SprigatitoIMG1" src="./Transporte1.gif" alt="" srcset="">
+                                    <img class="SprigatitoIMG" src="./Transporte2.gif" alt="" srcset="">
+                                </div>
                             </td>
                         </tr>
                     </table>
@@ -2105,9 +2143,6 @@
                         style="width: 100%; border-spacing: 0; text-align: center; background: #f4e7ee">
                         <tr>
                             <td colspan="2">
-                                <div class="PusheenDiv">
-                                    <img class="SprigatitoIMG" src="./SprigatitoII.gif" alt="" srcset="">
-                                </div>
                                 <div class="DivFormTransporte">
                                     <h1>Transporte</h1>
                                     <form class="FormularioTransporte" id="transporteForm" target="_self">
