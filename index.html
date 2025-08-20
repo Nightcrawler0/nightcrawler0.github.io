@@ -1890,6 +1890,19 @@
         width: 100%;
         height: 100%;
         animation: slide 16s infinite;
+
+        animation-name: slide;
+        animation-duration: 16s;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-fill-mode: none;
+        animation-play-state: running;
+    }
+
+    .carousel {
+        will-change: transform;
     }
 
     .carousel-images img {
@@ -1904,7 +1917,7 @@
             transform: translateX(0);
         }
 
-/*        13% {
+        /*        13% {
             transform: translateX(0);
         }
 
@@ -1923,7 +1936,7 @@
         }
 
 
-/*
+        /*
         46% {
             transform: translateX(-200%);
         }
@@ -1943,7 +1956,7 @@
         }
 
 
-/*
+        /*
         80% {
             transform: translateX(-400%);
         }
@@ -2227,9 +2240,8 @@
                                 <!--<![endif]-->
 
                                 <div class="ie-carouselFallback" style="text-align:center">
-                                    <span style="display:block;"><img
-                                            src=""
-                                            alt="" width="100%" style="max-width:100%; vertical-align:middle"></span>
+                                    <span style="display:block;"><img src="" alt="" width="100%"
+                                            style="max-width:100%; vertical-align:middle"></span>
 
                                 </div>
                             </td>
@@ -2718,8 +2730,8 @@
                                         <div class="colmidFormulario">
                                             <div class="colleftFormulario">
                                                 <div class="LeftFormulario">
-                                                    <img loading="lazy" src="https://i.ibb.co/wNNC3TN5/PinkLeft.png" alt="" border="0"
-                                                        class="ImagenIzquierda">
+                                                    <img loading="lazy" src="https://i.ibb.co/wNNC3TN5/PinkLeft.png"
+                                                        alt="" border="0" class="ImagenIzquierda">
                                                 </div>
                                                 <div class="MiddleFormulario">
                                                     <table class="">
@@ -2902,8 +2914,8 @@
                                                     </table>
                                                 </div>
                                                 <div class="RightFormulario">
-                                                    <img loading="lazy" src="https://i.ibb.co/fGppd2dC/Pink-Right.png" alt="Derecha"
-                                                        border="0" class="ImagenDerecha">
+                                                    <img loading="lazy" src="https://i.ibb.co/fGppd2dC/Pink-Right.png"
+                                                        alt="Derecha" border="0" class="ImagenDerecha">
                                                 </div>
 
                                             </div>
