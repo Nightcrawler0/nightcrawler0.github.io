@@ -1881,7 +1881,8 @@
         width: 100%;
         /* 4 slides */
         height: 100%;
-        animation: slideCats 60s infinite linear;
+        transition: transform 0.5s ease;
+
     }
 
     .slide {
@@ -2163,6 +2164,45 @@
                             </td>
                         </tr>
                     </table>
+                    <script>
+                        const carousel = document.querySelector('.carousel-imagesCats');
+                        const slides = document.querySelectorAll('.carousel-imagesCats img');
+                        let index = 0;
+                        let intervalTime = 8000; // autoplay cada 3 segundos
+                        let autoplay = setInterval(nextSlide, intervalTime);
+
+                        function showSlide(i) {
+                            carousel.style.transform = `translateX(-${i * 100}%)`;
+                        }
+
+                        function nextSlide() {
+                            index = (index + 1) % slides.length;
+                            showSlide(index);
+                        }
+
+                        // Swipe
+                        let startX = 0;
+                        let isDragging = false;
+
+                        carousel.addEventListener('touchstart', (e) => {
+                            clearInterval(autoplay); // pausa autoplay al tocar
+                            startX = e.touches[0].clientX;
+                            isDragging = true;
+                        });
+
+                        carousel.addEventListener('touchend', (e) => {
+                            if (!isDragging) return;
+                            let endX = e.changedTouches[0].clientX;
+                            if (startX - endX > 50) {
+                                index = (index + 1) % slides.length; // swipe left → siguiente
+                            } else if (endX - startX > 50) {
+                                index = (index - 1 + slides.length) % slides.length; // swipe right → anterior
+                            }
+                            showSlide(index);
+                            isDragging = false;
+                            autoplay = setInterval(nextSlide, intervalTime); // reanuda autoplay
+                        });
+                    </script>
 
 
                     <table class="TableH1">
