@@ -3150,11 +3150,11 @@ class Petal {
         this.size = 12 + Math.random() * 10; // tamaño aleatorio
         this.left = leftPercent; // porcentaje inicial
         this.top = -10; // empieza fuera de la pantalla
-        this.speed = 0.2 + Math.random() * 0.5; // velocidad de caída
+        this.speed = 0.1 + Math.random() * 0.1; // velocidad de caída
         this.swing = 15 + Math.random() * 20; // amplitud del vaivén
         this.angle = Math.random() * 360; // rotación inicial
         this.rotationSpeed = 1 + Math.random() * 3;
-        this.delay = delay * 1000; // retraso inicial en ms
+        this.delay = delay * 3000; // retraso inicial en ms
 
         // Crear elemento
         this.el = document.createElement('span');
