@@ -1778,162 +1778,162 @@
         transition: transform 0.5s ease;
     }
 
-        .carousel {
-            will-change: transform;
+    .carousel {
+        will-change: transform;
+    }
+
+    .carousel-images img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
         }
 
-        .carousel-images img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            flex-shrink: 0;
+        13% {
+            transform: translateX(0);
         }
 
-        @keyframes slide {
-            0% {
-                transform: translateX(0);
-            }
-
-            13% {
-                transform: translateX(0);
-            }
-
-            16.6% {
-                transform: translateX(-100%);
-            }
-
-
-            30% {
-                transform: translateX(-100%);
-            }
-
-            33.3% {
-                transform: translateX(-200%);
-            }
-
-
-            46% {
-                transform: translateX(-200%);
-            }
-
-            50% {
-                transform: translateX(-300%);
-            }
-
-
-            63% {
-                transform: translateX(-300%);
-            }
-
-            66.6% {
-                transform: translateX(-400%);
-            }
-
-            80% {
-                transform: translateX(-400%);
-            }
-
-            83.3% {
-                transform: translateX(-500%);
-            }
-
-            96% {
-                transform: translateX(-500%);
-            }
-
-            100% {
-                transform: translateX(0);
-            }
+        16.6% {
+            transform: translateX(-100%);
         }
 
 
-        .PCarouselCats {
-            width: 80%;
-            margin: 3% auto 0 auto;
-            text-align: center;
-            font-size: 18px;
-            line-height: 1.4;
-            background-color: white;
-            padding: 4%;
-            border-radius: 10px;
-            word-wrap: anywhere;
+        30% {
+            transform: translateX(-100%);
         }
 
-        .carouselCats {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            will-change: transform;
-        }
-
-        .carousel-imagesCats {
-            display: flex;
-            width: 100%;
-            /* 4 slides */
-            height: 100%;
-            transition: transform 0.5s ease;
-
-        }
-
-        .slide {
-            width: 100%;
-            height: 100%;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            /* gif arriba, texto abajo */
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .slide img {
-            max-height: 60%;
-            width: auto;
-            object-fit: contain;
+        33.3% {
+            transform: translateX(-200%);
         }
 
 
-        @keyframes slideCats {
-            0% {
-                transform: translateX(0);
-            }
-
-            20% {
-                transform: translateX(0);
-            }
-
-            25% {
-                transform: translateX(-100%);
-            }
-
-            45% {
-                transform: translateX(-100%);
-            }
-
-            50% {
-                transform: translateX(-200%);
-            }
-
-            70% {
-                transform: translateX(-200%);
-            }
-
-            75% {
-                transform: translateX(-300%);
-            }
-
-            95% {
-                transform: translateX(-300%);
-            }
-
-            100% {
-                transform: translateX(0);
-            }
+        46% {
+            transform: translateX(-200%);
         }
+
+        50% {
+            transform: translateX(-300%);
+        }
+
+
+        63% {
+            transform: translateX(-300%);
+        }
+
+        66.6% {
+            transform: translateX(-400%);
+        }
+
+        80% {
+            transform: translateX(-400%);
+        }
+
+        83.3% {
+            transform: translateX(-500%);
+        }
+
+        96% {
+            transform: translateX(-500%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+
+    .PCarouselCats {
+        width: 80%;
+        margin: 3% auto 0 auto;
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.4;
+        background-color: white;
+        padding: 4%;
+        border-radius: 10px;
+        word-wrap: anywhere;
+    }
+
+    .carouselCats {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        will-change: transform;
+    }
+
+    .carousel-imagesCats {
+        display: flex;
+        width: 100%;
+        /* 4 slides */
+        height: 100%;
+        transition: transform 0.5s ease;
+
+    }
+
+    .slide {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        /* gif arriba, texto abajo */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .slide img {
+        max-height: 60%;
+        width: auto;
+        object-fit: contain;
+    }
+
+
+    @keyframes slideCats {
+        0% {
+            transform: translateX(0);
+        }
+
+        20% {
+            transform: translateX(0);
+        }
+
+        25% {
+            transform: translateX(-100%);
+        }
+
+        45% {
+            transform: translateX(-100%);
+        }
+
+        50% {
+            transform: translateX(-200%);
+        }
+
+        70% {
+            transform: translateX(-200%);
+        }
+
+        75% {
+            transform: translateX(-300%);
+        }
+
+        95% {
+            transform: translateX(-300%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
 </style>
 
 <body>
@@ -2155,41 +2155,7 @@
                             </td>
                         </tr>
                     </table>
-                    <script>
-                        const carouselGifs = document.querySelector('.carousel-imagesCats');
-                        const slidesGifs = document.querySelectorAll('.carousel-imagesCats img');
-                        let indexGifs = 0;
 
-                        function showSlide(i) {
-                            carouselGifs.style.transform = `translateX(-${i * 100}%)`;
-                        }
-
-                        function nextSlide() {
-                            indexGifs = (indexGifs + 1) % slidesGifs.length;
-                            showSlide(indexGifs);
-                        }
-
-                        // Swipe
-                        let startXGifs = 0;
-                        let isDragging = false;
-
-                        carouselGifs.addEventListener('touchstart', (e) => {
-                            startXGifs = e.touches[0].clientX;
-                            isDragging = true;
-                        });
-
-                        carouselGifs.addEventListener('touchend', (e) => {
-                            if (!isDragging) return;
-                            let endX = e.changedTouches[0].clientX;
-                            if (startXGifs - endX > 50) {
-                                indexGifs = (indexGifs + 1) % slidesGifs.length; // swipe left → siguiente
-                            } else if (endX - startXGifs > 50) {
-                                indexGifs = (indexGifs - 1 + slidesGifs.length) % slidesGifs.length; // swipe right → anterior
-                            }
-                            showSlide(indexGifs);
-                            isDragging = false;
-                        });
-                    </script>
 
 
                     <table class="TableH1">
@@ -2212,63 +2178,7 @@
                             </td>
                         </tr>
                     </table>
-                    <script>
-                        const carousel = document.querySelector('.carousel-images');
-                        const slides = document.querySelectorAll('.carousel-images img');
-                        let index = 0;
-                        let interval;
 
-                        // Mostrar slide
-                        function showSlide(i) {
-                            carousel.style.transform = `translateX(-${i * 100}%)`;
-                        }
-
-                        // Siguiente slide
-                        function nextSlide() {
-                            index = (index + 1) % slides.length;
-                            showSlide(index);
-                        }
-
-                        // Autoplay cada 4s
-                        function startAutoplay() {
-                            interval = setInterval(nextSlide, 4000);
-                        }
-
-                        // Detener autoplay (cuando el usuario toca para swipear)
-                        function stopAutoplay() {
-                            clearInterval(interval);
-                        }
-
-                        // Swipe
-                        let startX = 0;
-                        let isDragging1 = false;
-
-                        carousel.addEventListener('touchstart', (e) => {
-                            startX = e.touches[0].clientX;
-                            isDragging1 = true;
-                            stopAutoplay(); // detener mientras hace swipe
-                        });
-
-                        carousel.addEventListener('touchend', (e) => {
-                            if (!isDragging1) return;
-                            let endX = e.changedTouches[0].clientX;
-
-                            if (startX - endX > 50) {
-                                // Swipe left → siguiente
-                                index = (index + 1) % slides.length;
-                            } else if (endX - startX > 50) {
-                                // Swipe right → anterior
-                                index = (index - 1 + slides.length) % slides.length;
-                            }
-
-                            showSlide(index);
-                            isDragging1 = false;
-                            startAutoplay(); // reanudar autoplay después del swipe
-                        });
-
-                        // Inicia autoplay al cargar
-                        startAutoplay();
-                    </script>
 
                     <table id="Lugar" class="SellosTable Sellos">
                         <tr class="">
@@ -2710,12 +2620,12 @@
                                 </div>
                                 <div class="carousel">
                                     <div class="carousel-images">
-                                        <img loading="lazy" src="/photo7.webp" alt="foto1">
-                                        <img loading="lazy" src="/photo8.webp" alt="foto2">
-                                        <img loading="lazy" src="/photo9.webp" alt="foto3">
-                                        <img loading="lazy" src="/photo10.webp" alt="foto4">
-                                        <img loading="lazy" src="/photo11.webp" alt="foto5">
-                                        <img loading="lazy" src="/photo12.webp" alt="foto6">
+                                        <img  class="carouselIMG" src="/photo7.webp" alt="foto1">
+                                        <img  class="carouselIMG" src="/photo8.webp" alt="foto2">
+                                        <img  class="carouselIMG" src="/photo9.webp" alt="foto3">
+                                        <img  class="carouselIMG" src="/photo10.webp" alt="foto4">
+                                        <img  class="carouselIMG" loading="lazy" src="/photo11.webp" alt="foto5">
+                                        <img  class="carouselIMG" loading="lazy" src="/photo12.webp" alt="foto6">
                                     </div>
                                 </div>
                             </td>
@@ -3225,6 +3135,69 @@
 
                         // Event listeners
                         codigoRsvpInput.addEventListener('blur', buscarNombrePorCodigo);
+
+
+                       function initCarousel(containerSelector, { autoplay = false, intervalTime = 4000 } = {}) {
+    document.querySelectorAll(containerSelector).forEach((carousel) => {
+        const slides = carousel.querySelectorAll('.slide, img'); 
+        let index = 0;
+        let interval;
+
+        // Mostrar slide
+        function showSlide(i) {
+            carousel.style.transform = `translateX(-${i * 100}%)`;
+        }
+
+        // Siguiente slide
+        function nextSlide() {
+            index = (index + 1) % slides.length;
+            showSlide(index);
+        }
+
+        // Autoplay
+        function startAutoplay() {
+            if (autoplay) interval = setInterval(nextSlide, intervalTime);
+        }
+
+        function stopAutoplay() {
+            if (autoplay) clearInterval(interval);
+        }
+
+        // Swipe
+        let startX = 0;
+        let isDragging = false;
+
+        carousel.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            stopAutoplay();
+        });
+
+        carousel.addEventListener('touchend', (e) => {
+            if (!isDragging) return;
+            let endX = e.changedTouches[0].clientX;
+
+            if (startX - endX > 50) {
+                index = (index + 1) % slides.length; // swipe left → siguiente
+            } else if (endX - startX > 50) {
+                index = (index - 1 + slides.length) % slides.length; // swipe right → anterior
+            }
+
+            showSlide(index);
+            isDragging = false;
+            startAutoplay();
+        });
+
+        // Inicializa
+        showSlide(0);
+        startAutoplay();
+    });
+}
+
+// 🎯 Iniciar cada carrusel con sus opciones
+initCarousel('.carousel-imagesCats', { autoplay: false });   // sin autoplay
+initCarousel('.carousel-images', { autoplay: true, intervalTime: 4000 }); // con autoplay
+
                     </script>
 
                     <!-- CONTENIDO ARRIBA, ABAJO NO TOCAR, CIERRE DE ETIQUETAS, SIRVE PARA AJUSTAR TAMAÑOS -->
