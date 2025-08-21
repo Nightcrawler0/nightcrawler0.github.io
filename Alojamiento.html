@@ -48,87 +48,9 @@
         border-radius: 70% 30% 70% 30%;
         /* forma irregular */
         opacity: 0.9;
-        animation: fall 8s linear infinite, sway 3s ease-in-out infinite;
     }
 
-    /* Cada pétalo en posiciones distintas */
-    .sakura span:nth-child(1) {
-        left: 5%;
-        animation-delay: 0s;
-    }
 
-    .sakura span:nth-child(2) {
-        left: 15%;
-        animation-delay: 2s;
-    }
-
-    .sakura span:nth-child(3) {
-        left: 25%;
-        animation-delay: 4s;
-    }
-
-    .sakura span:nth-child(4) {
-        left: 35%;
-        animation-delay: 1s;
-    }
-
-    .sakura span:nth-child(5) {
-        left: 50%;
-        animation-delay: 3s;
-    }
-
-    .sakura span:nth-child(6) {
-        left: 65%;
-        animation-delay: 5s;
-    }
-
-    .sakura span:nth-child(7) {
-        left: 75%;
-        animation-delay: 1.5s;
-    }
-
-    .sakura span:nth-child(8) {
-        left: 85%;
-        animation-delay: 2.5s;
-    }
-
-    .sakura span:nth-child(9) {
-        left: 90%;
-        animation-delay: 4.5s;
-    }
-
-    .sakura span:nth-child(10) {
-        left: 98%;
-        animation-delay: 6s;
-    }
-
-    /* Animación de caída */
-    @keyframes fall {
-        0% {
-            top: -10%;
-            transform: rotate(0deg);
-        }
-
-        100% {
-            top: 100%;
-            transform: rotate(360deg);
-        }
-    }
-
-    /* Animación de vaivén lateral */
-    @keyframes sway {
-        0% {
-            transform: translateX(0) rotate(0deg);
-        }
-
-        50% {
-            transform: translateX(30px) rotate(45deg);
-        }
-
-        100% {
-            transform: translateX(-30px) rotate(90deg);
-        }
-    }
 
 
 
@@ -155,6 +77,11 @@
     }
 
 
+    .Separador {
+        width: 100%;
+        border-bottom: 1px solid #c7d4e1;
+        margin: 5% 0px;
+    }
 
 
     /* CONTENIDO DEL HEADER */
@@ -2088,9 +2015,11 @@
                                         regreso.
                                     </p>
 
-                                    <p class="PHotel1" style="font-weight: bold;">
+                                    <span class="PHotel1" style="font-weight: bold;   font-family: 'Carme';">
                                         ¡Tenemos Muchas opciones Según tu presupuesto!
-                                    </p>
+                                    </span>
+
+                                    <div class="Separador"></div>
 
                                     <p class="PHotel2">
                                         <span style="font-weight: bolder;">Hotel Quinta Mina:</span> <br><br>
@@ -2114,6 +2043,7 @@
                                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                         referrerpolicy="no-referrer-when-downgrade"></iframe>
 
+                                    <div class="Separador"></div>
 
                                     <p class="PHotel2" style="">
                                         <span style="font-weight: bolder;">ONE Cuernavaca:</span> <br><br>
@@ -2136,6 +2066,7 @@
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60383.500498411595!2d-99.27649497985837!3d18.932775932320737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cddf0b7cd67743%3A0xa5dbe10ac9e6c66e!2sone%20Cuernavaca!5e0!3m2!1ses-419!2ses!4v1755704669485!5m2!1ses-419!2ses"
                                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                         referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    <div class="Separador"></div>
 
 
                                     <p class="PHotel2" style="">
@@ -2157,6 +2088,7 @@
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2022.8289669724302!2d-99.19206457761143!3d18.89128211157306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cddf6051f1f437%3A0x68563ce504ce6185!2sGrand%20Fiesta%20Americana%20Sumiya%20Cuernavaca!5e0!3m2!1ses!2ses!4v1755361574638!5m2!1ses!2ses"
                                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                         referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    <div class="Separador"></div>
 
                                     <p class="PHotel2" style="">
                                         <span style="font-weight: bolder;">HACIENDA COCOYOC:</span> <br><br>
@@ -2178,7 +2110,7 @@
                                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                                     <div class="PusheenDiv" style="background-color: #395a9d;">
-                                        <img class="FrierenIMG" src="./Frieren.gif" alt="" srcset="">
+                                        <img class="FrierenIMG" src="./MalteseDance.gif" alt="" srcset="">
                                     </div>
                                 </div>
                             </td>
@@ -2191,19 +2123,78 @@
             </tr>
         </tbody>
     </table>
+    <div class="sakura"></div>
 
-    <div class="sakura">
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-    </div>
+    <script>
+        class Petal {
+            constructor(container, leftPercent, delay) {
+                this.container = container;
+                this.size = 12 + Math.random() * 10; // tamaño aleatorio
+                this.left = leftPercent; // porcentaje inicial
+                this.top = -10; // empieza fuera de la pantalla
+                this.speed = 0.1 + Math.random() * 0.1; // velocidad de caída
+                this.swing = 15 + Math.random() * 20; // amplitud del vaivén
+                this.angle = Math.random() * 360; // rotación inicial
+                this.rotationSpeed = 1 + Math.random() * 3;
+                this.delay = delay * 3000; // retraso inicial en ms
+
+                // Crear elemento
+                this.el = document.createElement('span');
+                this.el.style.position = 'absolute';
+                this.el.style.top = this.top + '%';
+                this.el.style.left = this.left + '%';
+                this.el.style.width = this.size + 'px';
+                this.el.style.height = (this.size * 0.8) + 'px';
+                this.el.style.background = '#ffb6c1';
+                this.el.style.borderRadius = '70% 30% 70% 30%';
+                this.el.style.opacity = 0.9;
+                container.appendChild(this.el);
+
+                this.startTime = null;
+                this.anim();
+            }
+
+            anim(timestamp) {
+                if (!this.startTime) {
+                    this.startTime = timestamp + this.delay;
+                }
+
+                const elapsed = timestamp - this.startTime;
+
+                if (elapsed < 0) {
+                    requestAnimationFrame(this.anim.bind(this));
+                    return;
+                }
+
+                // Caída vertical
+                this.top += this.speed;
+                if (this.top > 110) this.top = -10; // reinicia
+
+                // Vaivén lateral
+                const sway = Math.sin((elapsed / 1000) * Math.PI) * this.swing;
+
+                // Rotación
+                this.angle += this.rotationSpeed;
+
+                // Aplicar estilos
+                this.el.style.top = this.top + '%';
+                this.el.style.left = (this.left + sway / window.innerWidth * 100) + '%';
+                this.el.style.transform = `rotate(${this.angle}deg)`;
+
+                requestAnimationFrame(this.anim.bind(this));
+            }
+        }
+
+        // Inicializar
+        const container = document.querySelector('.sakura');
+        for (let i = 0; i < 10; i++) {
+            const left = [5, 15, 25, 35, 50, 65, 75, 85, 90, 98][i];
+            const delay = [0, 2, 4, 1, 3, 5, 1.5, 2.5, 4.5, 6][i];
+            new Petal(container, left, delay);
+        }
+    </script>
+
+
 
 
 </body>

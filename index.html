@@ -2087,12 +2087,18 @@
                                 </div>
                                 <div class="carousel">
                                     <div class="carousel-images">
-                                        <img rel="preload" fetchpriority="high" loading="eager" class="carouselIMG" src="/photo1.webp" alt="foto1">
-                                        <img rel="preload" fetchpriority="high" loading="eager" class="carouselIMG" src="/photo2.webp" alt="foto2">
-                                        <img rel="preload" fetchpriority="high" loading="eager" class="carouselIMG" src="/photo3.webp" alt="foto3">
-                                        <img rel="preload" fetchpriority="high" loading="eager" class="carouselIMG" src="/photo4.webp" alt="foto4">
-                                        <img rel="preload" fetchpriority="high" loading="eager" class="carouselIMG" src="/photo5.webp" alt="foto5">
-                                        <img rel="preload" fetchpriority="high" loading="eager" class="carouselIMG" src="/photo6.webp" alt="foto6">
+                                        <img rel="preload" fetchpriority="high" loading="eager" class="carouselIMG"
+                                            src="/photo1.webp" alt="foto1">
+                                        <img rel="preload" fetchpriority="high" loading="eager" class="carouselIMG"
+                                            src="/photo2.webp" alt="foto2">
+                                        <img rel="preload" fetchpriority="high" loading="eager" class="carouselIMG"
+                                            src="/photo3.webp" alt="foto3">
+                                        <img rel="preload" fetchpriority="high" loading="eager" class="carouselIMG"
+                                            src="/photo4.webp" alt="foto4">
+                                        <img rel="preload" fetchpriority="high" loading="eager" class="carouselIMG"
+                                            src="/photo5.webp" alt="foto5">
+                                        <img rel="preload" fetchpriority="high" loading="eager" class="carouselIMG"
+                                            src="/photo6.webp" alt="foto6">
                                     </div>
                                 </div>
                             </td>
@@ -2540,12 +2546,12 @@
                                 </div>
                                 <div class="carousel">
                                     <div class="carousel-images">
-                                        <img rel="preload"  class="carouselIMG" src="/photo7.webp" alt="foto1">
-                                        <img rel="preload"  class="carouselIMG" src="/photo8.webp" alt="foto2">
-                                        <img rel="preload"  class="carouselIMG" src="/photo9.webp" alt="foto3">
-                                        <img rel="preload"  class="carouselIMG" src="/photo10.webp" alt="foto4">
-                                        <img rel="preload"  class="carouselIMG" src="/photo11.webp" alt="foto5">
-                                        <img rel="preload"  class="carouselIMG" src="/photo12.webp" alt="foto6">
+                                        <img rel="preload" class="carouselIMG" src="/photo7.webp" alt="foto1">
+                                        <img rel="preload" class="carouselIMG" src="/photo8.webp" alt="foto2">
+                                        <img rel="preload" class="carouselIMG" src="/photo9.webp" alt="foto3">
+                                        <img rel="preload" class="carouselIMG" src="/photo10.webp" alt="foto4">
+                                        <img rel="preload" class="carouselIMG" src="/photo11.webp" alt="foto5">
+                                        <img rel="preload" class="carouselIMG" src="/photo12.webp" alt="foto6">
                                     </div>
                                 </div>
                             </td>
@@ -3057,66 +3063,66 @@
                         codigoRsvpInput.addEventListener('blur', buscarNombrePorCodigo);
 
 
-function initAllCarousels({ autoplayDefault = false, intervalTimeDefault = 4000 } = {}) {
-    const carousels = document.querySelectorAll('.carousel-images, .carousel-imagesCats');
+                        function initAllCarousels({ autoplayDefault = false, intervalTimeDefault = 4000 } = {}) {
+                            const carousels = document.querySelectorAll('.carousel-images, .carousel-imagesCats');
 
-    carousels.forEach(wrapper => {
-        // Detectar slides reales
-        let slides = wrapper.querySelectorAll('.slide');
-        if (slides.length === 0) slides = wrapper.querySelectorAll('img'); // fallback a imágenes directas
-        slides = Array.from(slides);
+                            carousels.forEach(wrapper => {
+                                // Detectar slides reales
+                                let slides = wrapper.querySelectorAll('.slide');
+                                if (slides.length === 0) slides = wrapper.querySelectorAll('img'); // fallback a imágenes directas
+                                slides = Array.from(slides);
 
-        if (slides.length < 2) return;
+                                if (slides.length < 2) return;
 
-        let index = 0;
-        let interval;
-        const autoplay = wrapper.classList.contains('carousel-images') ? true : false;
+                                let index = 0;
+                                let interval;
+                                const autoplay = wrapper.classList.contains('carousel-images') ? true : false;
 
-        // Ajustar estilo del contenedor
-        wrapper.style.display = 'flex';
-        wrapper.style.width = `${slides.length * 100}%`;
-        wrapper.style.transition = 'transform 0.4s ease';
+                                // Ajustar estilo del contenedor
+                                wrapper.style.display = 'flex';
+                                wrapper.style.width = `${slides.length * 100}%`;
+                                wrapper.style.transition = 'transform 0.4s ease';
 
-        slides.forEach(slide => {
-            slide.style.width = `${100 / slides.length}%`;
-            slide.style.flexShrink = 0;
-        });
+                                slides.forEach(slide => {
+                                    slide.style.width = `${100 / slides.length}%`;
+                                    slide.style.flexShrink = 0;
+                                });
 
-        function showSlide(i) {
-            index = (i + slides.length) % slides.length;
-            wrapper.style.transform = `translateX(-${(index * 100) / slides.length}%)`;
-        }
+                                function showSlide(i) {
+                                    index = (i + slides.length) % slides.length;
+                                    wrapper.style.transform = `translateX(-${(index * 100) / slides.length}%)`;
+                                }
 
-        function nextSlide() { showSlide(index + 1); }
-        function prevSlide() { showSlide(index - 1); }
+                                function nextSlide() { showSlide(index + 1); }
+                                function prevSlide() { showSlide(index - 1); }
 
-        function startAutoplay() { if (autoplay) interval = setInterval(nextSlide, intervalTimeDefault); }
-        function stopAutoplay() { if (autoplay) clearInterval(interval); }
+                                function startAutoplay() { if (autoplay) interval = setInterval(nextSlide, intervalTimeDefault); }
+                                function stopAutoplay() { if (autoplay) clearInterval(interval); }
 
-        let startX = 0, isDragging = false;
+                                let startX = 0, isDragging = false;
 
-        function dragStart(x) { startX = x; isDragging = true; stopAutoplay(); }
-        function dragEnd(x) {
-            if (!isDragging) return;
-            if (startX - x > 50) nextSlide();
-            else if (x - startX > 50) prevSlide();
-            isDragging = false;
-            startAutoplay();
-        }
+                                function dragStart(x) { startX = x; isDragging = true; stopAutoplay(); }
+                                function dragEnd(x) {
+                                    if (!isDragging) return;
+                                    if (startX - x > 50) nextSlide();
+                                    else if (x - startX > 50) prevSlide();
+                                    isDragging = false;
+                                    startAutoplay();
+                                }
 
-        // Swipe táctil y mouse
-        wrapper.addEventListener('touchstart', e => dragStart(e.touches[0].clientX));
-        wrapper.addEventListener('touchend', e => dragEnd(e.changedTouches[0].clientX));
-        wrapper.addEventListener('mousedown', e => dragStart(e.clientX));
-        wrapper.addEventListener('mouseup', e => dragEnd(e.clientX));
+                                // Swipe táctil y mouse
+                                wrapper.addEventListener('touchstart', e => dragStart(e.touches[0].clientX));
+                                wrapper.addEventListener('touchend', e => dragEnd(e.changedTouches[0].clientX));
+                                wrapper.addEventListener('mousedown', e => dragStart(e.clientX));
+                                wrapper.addEventListener('mouseup', e => dragEnd(e.clientX));
 
-        showSlide(0);
-        startAutoplay();
-    });
-}
+                                showSlide(0);
+                                startAutoplay();
+                            });
+                        }
 
-// Inicializa todos los carruseles de la página
-initAllCarousels();
+                        // Inicializa todos los carruseles de la página
+                        initAllCarousels();
 
 
                     </script>
@@ -3128,89 +3134,77 @@ initAllCarousels();
         </tbody>
     </table>
 
-    <!-- <div class="sakura">
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span>
-    </div> -->
 
     <div class="sakura"></div>
 
-<script>
-class Petal {
-    constructor(container, leftPercent, delay) {
-        this.container = container;
-        this.size = 12 + Math.random() * 10; // tamaño aleatorio
-        this.left = leftPercent; // porcentaje inicial
-        this.top = -10; // empieza fuera de la pantalla
-        this.speed = 0.1 + Math.random() * 0.1; // velocidad de caída
-        this.swing = 15 + Math.random() * 20; // amplitud del vaivén
-        this.angle = Math.random() * 360; // rotación inicial
-        this.rotationSpeed = 1 + Math.random() * 3;
-        this.delay = delay * 3000; // retraso inicial en ms
+    <script>
+        class Petal {
+            constructor(container, leftPercent, delay) {
+                this.container = container;
+                this.size = 12 + Math.random() * 10; // tamaño aleatorio
+                this.left = leftPercent; // porcentaje inicial
+                this.top = -10; // empieza fuera de la pantalla
+                this.speed = 0.1 + Math.random() * 0.1; // velocidad de caída
+                this.swing = 15 + Math.random() * 20; // amplitud del vaivén
+                this.angle = Math.random() * 360; // rotación inicial
+                this.rotationSpeed = 1 + Math.random() * 3;
+                this.delay = delay * 3000; // retraso inicial en ms
 
-        // Crear elemento
-        this.el = document.createElement('span');
-        this.el.style.position = 'absolute';
-        this.el.style.top = this.top + '%';
-        this.el.style.left = this.left + '%';
-        this.el.style.width = this.size + 'px';
-        this.el.style.height = (this.size * 0.8) + 'px';
-        this.el.style.background = '#ffb6c1';
-        this.el.style.borderRadius = '70% 30% 70% 30%';
-        this.el.style.opacity = 0.9;
-        container.appendChild(this.el);
+                // Crear elemento
+                this.el = document.createElement('span');
+                this.el.style.position = 'absolute';
+                this.el.style.top = this.top + '%';
+                this.el.style.left = this.left + '%';
+                this.el.style.width = this.size + 'px';
+                this.el.style.height = (this.size * 0.8) + 'px';
+                this.el.style.background = '#ffb6c1';
+                this.el.style.borderRadius = '70% 30% 70% 30%';
+                this.el.style.opacity = 0.9;
+                container.appendChild(this.el);
 
-        this.startTime = null;
-        this.anim();
-    }
+                this.startTime = null;
+                this.anim();
+            }
 
-    anim(timestamp) {
-        if (!this.startTime) {
-            this.startTime = timestamp + this.delay;
+            anim(timestamp) {
+                if (!this.startTime) {
+                    this.startTime = timestamp + this.delay;
+                }
+
+                const elapsed = timestamp - this.startTime;
+
+                if (elapsed < 0) {
+                    requestAnimationFrame(this.anim.bind(this));
+                    return;
+                }
+
+                // Caída vertical
+                this.top += this.speed;
+                if (this.top > 110) this.top = -10; // reinicia
+
+                // Vaivén lateral
+                const sway = Math.sin((elapsed / 1000) * Math.PI) * this.swing;
+
+                // Rotación
+                this.angle += this.rotationSpeed;
+
+                // Aplicar estilos
+                this.el.style.top = this.top + '%';
+                this.el.style.left = (this.left + sway / window.innerWidth * 100) + '%';
+                this.el.style.transform = `rotate(${this.angle}deg)`;
+
+                requestAnimationFrame(this.anim.bind(this));
+            }
         }
 
-        const elapsed = timestamp - this.startTime;
-
-        if (elapsed < 0) {
-            requestAnimationFrame(this.anim.bind(this));
-            return;
+        // Inicializar
+        const container = document.querySelector('.sakura');
+        for (let i = 0; i < 10; i++) {
+            const left = [5, 15, 25, 35, 50, 65, 75, 85, 90, 98][i];
+            const delay = [0, 2, 4, 1, 3, 5, 1.5, 2.5, 4.5, 6][i];
+            new Petal(container, left, delay);
         }
-
-        // Caída vertical
-        this.top += this.speed;
-        if (this.top > 110) this.top = -10; // reinicia
-
-        // Vaivén lateral
-        const sway = Math.sin((elapsed / 1000) * Math.PI) * this.swing;
-
-        // Rotación
-        this.angle += this.rotationSpeed;
-
-        // Aplicar estilos
-        this.el.style.top = this.top + '%';
-        this.el.style.left = (this.left + sway / window.innerWidth * 100) + '%';
-        this.el.style.transform = `rotate(${this.angle}deg)`;
-
-        requestAnimationFrame(this.anim.bind(this));
-    }
-}
-
-// Inicializar
-const container = document.querySelector('.sakura');
-for (let i = 0; i < 10; i++) {
-    const left = [5,15,25,35,50,65,75,85,90,98][i];
-    const delay = [0,2,4,1,3,5,1.5,2.5,4.5,6][i];
-    new Petal(container, left, delay);
-}
-</script>
+    </script>
 
 
 
