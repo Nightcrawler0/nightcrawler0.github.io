@@ -3137,66 +3137,67 @@
                         codigoRsvpInput.addEventListener('blur', buscarNombrePorCodigo);
 
 
-                       function initCarousel(containerSelector, { autoplay = false, intervalTime = 4000 } = {}) {
-    document.querySelectorAll(containerSelector).forEach((carousel) => {
-        const slides = carousel.querySelectorAll('.slide, img'); 
+function initAllCarousels({ autoplayDefault = false, intervalTimeDefault = 4000 } = {}) {
+    const carousels = document.querySelectorAll('.carousel-images, .carousel-imagesCats');
+
+    carousels.forEach(wrapper => {
+        // Detectar slides reales
+        let slides = wrapper.querySelectorAll('.slide');
+        if (slides.length === 0) slides = wrapper.querySelectorAll('img'); // fallback a imágenes directas
+        slides = Array.from(slides);
+
+        if (slides.length < 2) return;
+
         let index = 0;
         let interval;
+        const autoplay = wrapper.classList.contains('carousel-images') ? true : false;
 
-        // Mostrar slide
-        function showSlide(i) {
-            carousel.style.transform = `translateX(-${i * 100}%)`;
-        }
+        // Ajustar estilo del contenedor
+        wrapper.style.display = 'flex';
+        wrapper.style.width = `${slides.length * 100}%`;
+        wrapper.style.transition = 'transform 0.4s ease';
 
-        // Siguiente slide
-        function nextSlide() {
-            index = (index + 1) % slides.length;
-            showSlide(index);
-        }
-
-        // Autoplay
-        function startAutoplay() {
-            if (autoplay) interval = setInterval(nextSlide, intervalTime);
-        }
-
-        function stopAutoplay() {
-            if (autoplay) clearInterval(interval);
-        }
-
-        // Swipe
-        let startX = 0;
-        let isDragging = false;
-
-        carousel.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-            isDragging = true;
-            stopAutoplay();
+        slides.forEach(slide => {
+            slide.style.width = `${100 / slides.length}%`;
+            slide.style.flexShrink = 0;
         });
 
-        carousel.addEventListener('touchend', (e) => {
+        function showSlide(i) {
+            index = (i + slides.length) % slides.length;
+            wrapper.style.transform = `translateX(-${(index * 100) / slides.length}%)`;
+        }
+
+        function nextSlide() { showSlide(index + 1); }
+        function prevSlide() { showSlide(index - 1); }
+
+        function startAutoplay() { if (autoplay) interval = setInterval(nextSlide, intervalTimeDefault); }
+        function stopAutoplay() { if (autoplay) clearInterval(interval); }
+
+        let startX = 0, isDragging = false;
+
+        function dragStart(x) { startX = x; isDragging = true; stopAutoplay(); }
+        function dragEnd(x) {
             if (!isDragging) return;
-            let endX = e.changedTouches[0].clientX;
-
-            if (startX - endX > 50) {
-                index = (index + 1) % slides.length; // swipe left → siguiente
-            } else if (endX - startX > 50) {
-                index = (index - 1 + slides.length) % slides.length; // swipe right → anterior
-            }
-
-            showSlide(index);
+            if (startX - x > 50) nextSlide();
+            else if (x - startX > 50) prevSlide();
             isDragging = false;
             startAutoplay();
-        });
+        }
 
-        // Inicializa
+        // Swipe táctil y mouse
+        wrapper.addEventListener('touchstart', e => dragStart(e.touches[0].clientX));
+        wrapper.addEventListener('touchend', e => dragEnd(e.changedTouches[0].clientX));
+        wrapper.addEventListener('mousedown', e => dragStart(e.clientX));
+        wrapper.addEventListener('mouseup', e => dragEnd(e.clientX));
+
         showSlide(0);
         startAutoplay();
     });
 }
 
-// 🎯 Iniciar cada carrusel con sus opciones
-initCarousel('.carousel-imagesCats', { autoplay: false });   // sin autoplay
-initCarousel('.carousel-images', { autoplay: true, intervalTime: 4000 }); // con autoplay
+// Inicializa todos los carruseles de la página
+initAllCarousels();
+
 
                     </script>
 
