@@ -26,6 +26,72 @@
         margin: 0px;
     }
 
+    /* Fondo oscuro */
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    /* Caja del popup */
+    .popup {
+        background: white;
+        padding: 20px;
+        max-width: 400px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        animation: fadeIn 0.3s ease;
+    }
+
+
+    .popup h2 {
+        margin-top: 0;
+    }
+
+    .popup p {
+        text-align: left;
+        margin: 7% 0;
+        line-height: 200%;
+
+    }
+
+    .popup button {
+        margin-top: 15px;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 6px;
+        background: #ff69b4;
+        color: white;
+        cursor: pointer;
+        font-size: 14px;
+        transition: 0.2s;
+        display: inline !important;
+    }
+
+    .popup button:hover {
+        background: #e0559f;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
     .sakura {
         position: fixed;
         top: 0;
@@ -727,6 +793,11 @@
         line-height: 170%;
     }
 
+    .Separador {
+        width: 100%;
+        border-bottom: 1px solid #c7d4e1;
+        margin: 5% 0px;
+    }
 
     .Cuenta {
         background-color: #fdf5e5;
@@ -861,71 +932,6 @@
         font-weight: 500;
         box-sizing: border-box;
     }
-
-
-
-
-    /*
-    .colmaskFormulario {
-        position: relative;
-        overflow: hidden;
-        margin: 0px auto;
-        width: 100%;
-    }
-
-    .colmidFormulario {
-        position: relative;
-        width: 100%;
-        right: 25%;
-        background-color: #b4d2f7;
-    }
-
-    .colleftFormulario {
-        position: relative;
-        width: 100%;
-        right: 50%;
-        background-color: #b4d2f7;
-    }
-
-    .MiddleFormulario {
-        position: relative;
-        overflow: hidden;
-        float: left;
-        width: 48%;
-        left: 101%;
-    }
-
-    .LeftFormulario {
-        position: relative;
-        overflow: hidden;
-        float: left;
-        width: 24%;
-        left: 26%;
-        background-color: #ffffff;
-        animation-name: slideInLeft;
-        animation-delay: 0.3s;
-        opacity: 0;
-        animation-duration: 1s;
-        animation-fill-mode: forwards;
-    }
-
-    .RightFormulario{
-        position: relative;
-        overflow: hidden;
-        float: left;
-        width: 24%;
-        left: 80%;
-        background-color: #ffffff;
-        animation-name: slideInRight;
-        animation-delay: 0.3s;
-        opacity: 0;
-        animation-duration: 1s;
-        animation-fill-mode: forwards;
-    }
-
-    */
-
-
 
     /* BOTON FORMULARIO*/
 
@@ -1126,6 +1132,21 @@
 
     /* CONTACTO */
 
+    .H1Contacto {
+        margin: 5% 13%;
+    }
+
+    .PContacto {
+        color: white;
+        font-size: 18px;
+        margin: 0px;
+        font-weight: bold;
+        word-break: break-word;
+        text-align: justify;
+        margin: 0% 13%;
+
+    }
+
     .card {
         width: 100%;
         aspect-ratio: 3 / 4;
@@ -1192,30 +1213,6 @@
         flex-direction: column;
     }
 
-    /*
-    .Contacto {
-        margin: 4% 0;
-    }
-
-    .H1Contacto {
-        color: white;
-        letter-spacing: .2em;
-        margin-bottom: 0px;
-    }
-
-    .FichaContacto {
-        width: 100%;
-        height: 100%;
-        background-color: white;
-        border-radius: 10px;
-    }
-
-
-
-    .NekoIMG {
-        width: 85%;
-    }
-*/
 
     /* HOTEL */
 
@@ -1363,6 +1360,7 @@
             margin: 4% 2%;
         }
 
+
         /* -- HEADER -- */
         .ContainersHeaderP,
         .ContainersHeaderIMG {
@@ -1435,6 +1433,7 @@
         }
 
         /* -- FICHAS TEXTO + IMÁGENES -- */
+
         .FichasII tr {
             display: flex;
             flex-direction: column;
@@ -1506,6 +1505,7 @@
             font-size: 18px;
             letter-spacing: 2px;
         }
+
 
         /* -- FORMULARIO -- */
         .colleftFormulario {
@@ -1857,6 +1857,51 @@
 </style>
 
 <body>
+    <!-- Popup -->
+    <div class="popup-overlay" id="popup">
+        <div class="popup">
+            <h1>🎉 Bienvenidos</h1>
+            <p>
+                Aquí encontrarás toda la información importante:
+                <br>
+                📍 El lugar de la boda
+                <br>
+                🏨 Opciones de hospedaje
+                <br>
+                ✅ Un espacio para confirmar tu asistencia y avisarnos si tienes alguna alergia
+                <br>
+                <br>
+                También encontrarás nuestros teléfonos y el del wedding planner, para cualquier duda o apoyo que
+                necesites.
+                <br>
+                <br>
+                ✨ <strong>Tip: las fotos y animaciones puedes moverlas con el dedo (deslizar a los lados).</strong>
+            </p>
+            <div>
+                <button id="closePopup">Cerrar</button>
+
+
+                <div class="PusheenDiv">
+                    <img class="" src="./Maltesex2.gif" alt="" style="width: 15%;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const popup = document.getElementById("popup");
+        const closeBtn = document.getElementById("closePopup");
+
+        // Mostrar popup al cargar la página
+        window.addEventListener("load", () => {
+            popup.style.display = "flex";
+        });
+
+        // Cerrar popup y mantenerlo cerrado hasta recarga
+        closeBtn.addEventListener("click", () => {
+            popup.style.display = "none";
+        });
+    </script>
     <table width="100%">
         <tbody>
             <tr>
@@ -2012,7 +2057,7 @@
                         <tr>
                             <td class="">
                                 <div class="TextoH1">
-                                    <h1>
+                                    <h1 style="margin: 0% 0;">
                                         NUESTRA HISTORIA
                                     </h1>
                                 </div>
@@ -2514,7 +2559,17 @@
                             <td class="TDCuenta">
                                 <div class="Cuenta">
                                     <p class="TextoCuenta">
-                                        <span>Datos para tu depósito de <br>Pokemonedas</span><br><br>
+                                        <span>Datos para tu depósito de <br>Pokemonedas</span><br>
+                                        (en MXN)<br><br>
+                                        Banco: Banco de Aventura <br><br>
+                                        Cuenta Clave: 12345678 <br><br>
+                                        Titular: Ash Ketchup <br><br>
+                                    </p>
+                                    <div class="Separador"></div>
+
+                                    <p class="TextoCuenta">
+                                        <span>Datos para tu depósito de <br>Pokemonedas</span> <br>
+                                        (en otras monedas)<br><br>
                                         Banco: Banco de Aventura <br><br>
                                         Cuenta Clave: 12345678 <br><br>
                                         Titular: Ash Ketchup <br><br>
@@ -2868,12 +2923,26 @@
                     </script>
 
 
+                    <table class="Contacto" style="width: 100%; border-spacing: 0;">
+                        <tr>
+                            <td>
+                                <div>
+                                    <h1 class="H1Contacto">
+                                        Contacto
+                                    </h1>
+                                    <p class="PContacto">
+                                        Prueba pinchando con quien quieres contactar...
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
                     <table class="Contacto" style="width: 100%; border-spacing: 0; text-align: center;">
                         <tr>
                             <td colspan="2">
                                 <h1 class="H1Contacto">
-                                    Contacto
-                                </h1>
+
                             </td>
                         </tr>
                         <tr>
