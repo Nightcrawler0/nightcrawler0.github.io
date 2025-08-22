@@ -838,6 +838,11 @@
     .Formulario {
         width: 100%;
         margin-top: 5%;
+        background: url(./NubesRosas.png);
+        background-repeat: repeat;
+        background-size: auto;
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 
     .LeftFormulario,
@@ -847,10 +852,7 @@
     }
 
     .MiddleFormulario {
-        flex-grow: 1;
-        padding: 0 10px;
-        z-index: 1;
-        margin: 0 -13%;
+        width: 100%;
     }
 
     .colleftFormulario {
@@ -865,7 +867,7 @@
 
     form {
         background-color: #ffffff;
-        margin: 5% auto;
+        margin: 3% auto;
         padding: 3% 5%;
         border-radius: 10px;
         font-family: 'Carme' !important;
@@ -1341,7 +1343,7 @@
 
     @media screen and (max-width: 768px) {
 
-        .popup{
+        .popup {
             margin: 5%;
         }
 
@@ -1510,6 +1512,7 @@
 
 
         /* -- FORMULARIO -- */
+
         .colleftFormulario {
             flex-direction: column;
         }
@@ -1523,6 +1526,17 @@
             margin: 0;
             padding: 0;
         }
+
+        .Formulario {
+            width: 100%;
+            margin-top: 5%;
+            background: url(./NubesRosas_One.png);
+            background-repeat: repeat;
+            background-size: auto;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
 
         form {
             padding: 20px;
@@ -2620,202 +2634,184 @@
                         <tbody>
                             <tr>
                                 <td style="padding: 0">
-                                    <div class="colmaskFormulario">
+                                    <div class="DivFormulario">
                                         <div class="colmidFormulario">
-                                            <div class="colleftFormulario">
-                                                <div class="LeftFormulario">
-                                                    <img loading="lazy" src="https://i.ibb.co/wNNC3TN5/PinkLeft.png"
-                                                        alt="" border="0" class="ImagenIzquierda">
-                                                </div>
-                                                <div class="MiddleFormulario">
-                                                    <table class="">
-                                                        <tr>
-                                                            <td>
-                                                                <h1>¡Confirma tu asistencia!</h1>
-                                                                <p class="MainTxtFormulario">
-                                                                    Emplea el código que te compartimos para confirmar
-                                                                    tu Asistencia!
-                                                                    <br>
-                                                                    <br>
-                                                                    Recuerda que es <span
-                                                                        style="text-decoration:underline; color: #fcc85e">individual
-                                                                        e intransferible</span>:
+                                            <div class="MiddleFormulario">
+                                                <table class="">
+                                                    <tr>
+                                                        <td>
+                                                            <h1 style="  margin: 5% 13%;">¡Confirma tu asistencia!</h1>
+                                                            <p style="  margin: 0% 13%;" class="MainTxtFormulario">
+                                                                Emplea el código que te compartimos para confirmar
+                                                                tu Asistencia!
+                                                                <br>
+                                                                <br>
+                                                                Recuerda que es <span
+                                                                    style="text-decoration:underline; color: #fcc85e">individual
+                                                                    e intransferible</span>:
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <table class="BloqueFormulario" style="width: 100%;">
+                                                    <tr>
+                                                        <td>
+                                                            <form id="confirmationForm" onsubmit="return false;">
+                                                                <div class="form-group">
+                                                                    <label for="CodigoRSVP" class="Codigo">*Código
+                                                                        RSVP:</label>
+                                                                    <input type="text" name="CodigoRSVP" id="CodigoRSVP"
+                                                                        required>
+                                                                    <button class="cta">
+                                                                        <span class="hover-underline-animation">
+                                                                            Consultar</span>
+                                                                        <svg id="arrow-horizontal"
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                            width="90" height="10" viewBox="0 0 46 16">
+                                                                            <path id="Path_10" data-name="Path 10"
+                                                                                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                                                                                transform="translate(30)"></path>
+                                                                        </svg>
+                                                                    </button>
+
+                                                                </div>
+
+                                                                <p id="saludo-personalizado"
+                                                                    style="font-weight: bold; text-align: center; min-height: 20px;">
                                                                 </p>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                    <table class="BloqueFormulario" style="width: 100%;">
-                                                        <tr>
-                                                            <td>
-                                                                <form id="confirmationForm" onsubmit="return false;">
+
+                                                                <div id="asistencia-form-section"
+                                                                    style="display: none;">
                                                                     <div class="form-group">
-                                                                        <label for="CodigoRSVP" class="Codigo">*Código
-                                                                            RSVP:</label>
-                                                                        <input type="text" name="CodigoRSVP"
-                                                                            id="CodigoRSVP" required>
-                                                                        <button class="cta">
-                                                                            <span class="hover-underline-animation">
-                                                                                Consultar</span>
-                                                                            <svg id="arrow-horizontal"
-                                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                                width="90" height="10"
-                                                                                viewBox="0 0 46 16">
-                                                                                <path id="Path_10" data-name="Path 10"
-                                                                                    d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-                                                                                    transform="translate(30)"></path>
-                                                                            </svg>
-                                                                        </button>
-
+                                                                        <label
+                                                                            style="text-align: center;">¿Asistirás?</label>
+                                                                        <div class="checkbox-group"
+                                                                            style="text-align:center;">
+                                                                            <label><input type="radio" name="Asistencia"
+                                                                                    id="AsistenciaSi" value="Si"
+                                                                                    required> Sí</label>
+                                                                            <label><input type="radio" name="Asistencia"
+                                                                                    id="AsistenciaNo" value="No">
+                                                                                No</label>
+                                                                        </div>
                                                                     </div>
 
-                                                                    <p id="saludo-personalizado"
-                                                                        style="font-weight: bold; text-align: center; min-height: 20px;">
-                                                                    </p>
+                                                                    <div class="form-group">
+                                                                        <label for="Alergias">Restricciones
+                                                                            Alimentarias / Alergias:</label>
+                                                                        <input type="text" class="Text" id="Alergias"
+                                                                            name="Alergias">
+                                                                    </div>
 
-                                                                    <div id="asistencia-form-section"
-                                                                        style="display: none;">
-                                                                        <div class="form-group">
-                                                                            <label
-                                                                                style="text-align: center;">¿Asistirás?</label>
-                                                                            <div class="checkbox-group"
-                                                                                style="text-align:center;">
-                                                                                <label><input type="radio"
-                                                                                        name="Asistencia"
-                                                                                        id="AsistenciaSi" value="Si"
-                                                                                        required> Sí</label>
-                                                                                <label><input type="radio"
-                                                                                        name="Asistencia"
-                                                                                        id="AsistenciaNo" value="No">
-                                                                                    No</label>
-                                                                            </div>
-                                                                        </div>
+                                                                    <div
+                                                                        style="width: 100%; display: flex; justify-content:center;">
+                                                                        <button type="submit">
+                                                                            <div class="svg-wrapper-1">
+                                                                                <div class="svg-wrapper">
+                                                                                    <svg width="70px" height="70px"
+                                                                                        viewBox="0 0 48.00 48.00"
+                                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                                        fill="#e473b1" stroke="#e473b1"
+                                                                                        stroke-width="0.768">
+                                                                                        <g id="SVGRepo_bgCarrier"
+                                                                                            stroke-width="0"></g>
+                                                                                        <g id="SVGRepo_tracerCarrier"
+                                                                                            stroke-linecap="round"
+                                                                                            stroke-linejoin="round"
+                                                                                            stroke="#CCCCCC"
+                                                                                            stroke-width="1.152">
+                                                                                            <defs>
+                                                                                                <style>
+                                                                                                    .a {
+                                                                                                        fill: none;
+                                                                                                        stroke: #e473b1;
+                                                                                                        stroke-linecap: round;
+                                                                                                        stroke-linejoin: round;
+                                                                                                    }
 
-                                                                        <div class="form-group">
-                                                                            <label for="Alergias">Restricciones
-                                                                                Alimentarias / Alergias:</label>
-                                                                            <input type="text" class="Text"
-                                                                                id="Alergias" name="Alergias">
-                                                                        </div>
-
-                                                                        <div
-                                                                            style="width: 100%; display: flex; justify-content:center;">
-                                                                            <button type="submit">
-                                                                                <div class="svg-wrapper-1">
-                                                                                    <div class="svg-wrapper">
-                                                                                        <svg width="70px" height="70px"
-                                                                                            viewBox="0 0 48.00 48.00"
-                                                                                            xmlns="http://www.w3.org/2000/svg"
-                                                                                            fill="#e473b1"
-                                                                                            stroke="#e473b1"
-                                                                                            stroke-width="0.768">
-                                                                                            <g id="SVGRepo_bgCarrier"
-                                                                                                stroke-width="0"></g>
-                                                                                            <g id="SVGRepo_tracerCarrier"
-                                                                                                stroke-linecap="round"
-                                                                                                stroke-linejoin="round"
-                                                                                                stroke="#CCCCCC"
-                                                                                                stroke-width="1.152">
-                                                                                                <defs>
-                                                                                                    <style>
-                                                                                                        .a {
-                                                                                                            fill: none;
-                                                                                                            stroke: #e473b1;
-                                                                                                            stroke-linecap: round;
-                                                                                                            stroke-linejoin: round;
-                                                                                                        }
-
-                                                                                                        .b {
-                                                                                                            fill: #e473b1;
-                                                                                                        }
-                                                                                                    </style>
-                                                                                                </defs>
-                                                                                                <path class="a"
-                                                                                                    d="M30.37,23.32a13.6,13.6,0,0,0,3-8.37A9.16,9.16,0,0,0,30,8.24S29.73,5,28.7,4.56s-4.1,2-4.1,2-5,.21-6.93,1.49c0,0-4.44-1.06-5-.29s.26,4.14.26,4.14a9.1,9.1,0,0,0-1.45,5.17c0,3.25,4.91,7.83,4.91,7.83a21.21,21.21,0,0,0-3.12,10.43c0,4.27,2.08,5.3,2.08,5.3">
-                                                                                                </path>
-                                                                                                <path class="a"
-                                                                                                    d="M17.25,29.61,20.15,41s-1.24,2.52,2.57,2.52,3-3.16,1.92-3.59l-1.88-7.22">
-                                                                                                </path>
-                                                                                                <path class="a"
-                                                                                                    d="M29.13,38.07c-2,.81-2.74,3.93.81,3.93s4.92-4,4.92-6.75a29.07,29.07,0,0,0-1.24-6.75,4.25,4.25,0,0,0,1.24-1.84c.17-.9,1.11-10,1.19-10.39a4.27,4.27,0,0,0,.47-1.49,2.65,2.65,0,0,0-3.49-2">
-                                                                                                </path>
-                                                                                                <path class="a"
-                                                                                                    d="M25.23,40.44a19,19,0,0,1,2.25-.27">
-                                                                                                </path>
-                                                                                                <path class="a"
-                                                                                                    d="M20,41.57a6.68,6.68,0,0,1-2.82.43c-1.07,0-3.5-1.77-.15-3.91">
-                                                                                                </path>
-                                                                                                <circle class="a"
-                                                                                                    cx="22.93"
-                                                                                                    cy="27.96" r="2.51">
-                                                                                                </circle>
-                                                                                                <path class="a"
-                                                                                                    d="M23.89,25.62a37.14,37.14,0,0,0,5.88-.71">
-                                                                                                </path>
-                                                                                                <path class="a"
-                                                                                                    d="M16.39,24.91a29.71,29.71,0,0,0,5.61.72">
-                                                                                                </path>
-                                                                                                <path class="a"
-                                                                                                    d="M24.76,12.63a2.91,2.91,0,0,1,3.76-.72">
-                                                                                                </path>
-                                                                                                <path class="a"
-                                                                                                    d="M15.37,14.36a2.91,2.91,0,0,1,3.76-.71">
-                                                                                                </path>
-                                                                                                <path class="a"
-                                                                                                    d="M25.92,16.07C24.47,18.32,23,17,22.42,16c-.09,1.34-.94,3.11-2.91,1.34">
-                                                                                                </path>
-                                                                                                <path class="a"
-                                                                                                    d="M28.77,14a3.79,3.79,0,0,0,2.31-.57">
-                                                                                                </path>
-                                                                                                <path class="a"
-                                                                                                    d="M29,15.27A4.66,4.66,0,0,0,31.51,15">
-                                                                                                </path>
-                                                                                                <path class="a"
-                                                                                                    d="M28.77,16.44a2.86,2.86,0,0,0,2.45,0">
-                                                                                                </path>
-                                                                                                <path class="a"
-                                                                                                    d="M16.17,16.74a3.82,3.82,0,0,1-2.37.17">
-                                                                                                </path>
-                                                                                                <path class="a"
-                                                                                                    d="M16.33,18.06a4.6,4.6,0,0,1-2.46.47">
-                                                                                                </path>
-                                                                                                <path class="a"
-                                                                                                    d="M16.93,19.1a2.87,2.87,0,0,1-2.33.76">
-                                                                                                </path>
-                                                                                                <circle class="b"
-                                                                                                    cx="22.21"
-                                                                                                    cy="15.16" r="0.75">
-                                                                                                </circle>
-                                                                                                <path class="a"
-                                                                                                    d="M12.93,11.91C13.8,10.5,15,9.39,17.67,8.06">
-                                                                                                </path>
-                                                                                                <path class="a"
-                                                                                                    d="M24.6,6.57A8.35,8.35,0,0,1,30,8.24">
-                                                                                                </path>
-                                                                                            </g>
-                                                                                        </svg>
-                                                                                    </div>
+                                                                                                    .b {
+                                                                                                        fill: #e473b1;
+                                                                                                    }
+                                                                                                </style>
+                                                                                            </defs>
+                                                                                            <path class="a"
+                                                                                                d="M30.37,23.32a13.6,13.6,0,0,0,3-8.37A9.16,9.16,0,0,0,30,8.24S29.73,5,28.7,4.56s-4.1,2-4.1,2-5,.21-6.93,1.49c0,0-4.44-1.06-5-.29s.26,4.14.26,4.14a9.1,9.1,0,0,0-1.45,5.17c0,3.25,4.91,7.83,4.91,7.83a21.21,21.21,0,0,0-3.12,10.43c0,4.27,2.08,5.3,2.08,5.3">
+                                                                                            </path>
+                                                                                            <path class="a"
+                                                                                                d="M17.25,29.61,20.15,41s-1.24,2.52,2.57,2.52,3-3.16,1.92-3.59l-1.88-7.22">
+                                                                                            </path>
+                                                                                            <path class="a"
+                                                                                                d="M29.13,38.07c-2,.81-2.74,3.93.81,3.93s4.92-4,4.92-6.75a29.07,29.07,0,0,0-1.24-6.75,4.25,4.25,0,0,0,1.24-1.84c.17-.9,1.11-10,1.19-10.39a4.27,4.27,0,0,0,.47-1.49,2.65,2.65,0,0,0-3.49-2">
+                                                                                            </path>
+                                                                                            <path class="a"
+                                                                                                d="M25.23,40.44a19,19,0,0,1,2.25-.27">
+                                                                                            </path>
+                                                                                            <path class="a"
+                                                                                                d="M20,41.57a6.68,6.68,0,0,1-2.82.43c-1.07,0-3.5-1.77-.15-3.91">
+                                                                                            </path>
+                                                                                            <circle class="a" cx="22.93"
+                                                                                                cy="27.96" r="2.51">
+                                                                                            </circle>
+                                                                                            <path class="a"
+                                                                                                d="M23.89,25.62a37.14,37.14,0,0,0,5.88-.71">
+                                                                                            </path>
+                                                                                            <path class="a"
+                                                                                                d="M16.39,24.91a29.71,29.71,0,0,0,5.61.72">
+                                                                                            </path>
+                                                                                            <path class="a"
+                                                                                                d="M24.76,12.63a2.91,2.91,0,0,1,3.76-.72">
+                                                                                            </path>
+                                                                                            <path class="a"
+                                                                                                d="M15.37,14.36a2.91,2.91,0,0,1,3.76-.71">
+                                                                                            </path>
+                                                                                            <path class="a"
+                                                                                                d="M25.92,16.07C24.47,18.32,23,17,22.42,16c-.09,1.34-.94,3.11-2.91,1.34">
+                                                                                            </path>
+                                                                                            <path class="a"
+                                                                                                d="M28.77,14a3.79,3.79,0,0,0,2.31-.57">
+                                                                                            </path>
+                                                                                            <path class="a"
+                                                                                                d="M29,15.27A4.66,4.66,0,0,0,31.51,15">
+                                                                                            </path>
+                                                                                            <path class="a"
+                                                                                                d="M28.77,16.44a2.86,2.86,0,0,0,2.45,0">
+                                                                                            </path>
+                                                                                            <path class="a"
+                                                                                                d="M16.17,16.74a3.82,3.82,0,0,1-2.37.17">
+                                                                                            </path>
+                                                                                            <path class="a"
+                                                                                                d="M16.33,18.06a4.6,4.6,0,0,1-2.46.47">
+                                                                                            </path>
+                                                                                            <path class="a"
+                                                                                                d="M16.93,19.1a2.87,2.87,0,0,1-2.33.76">
+                                                                                            </path>
+                                                                                            <circle class="b" cx="22.21"
+                                                                                                cy="15.16" r="0.75">
+                                                                                            </circle>
+                                                                                            <path class="a"
+                                                                                                d="M12.93,11.91C13.8,10.5,15,9.39,17.67,8.06">
+                                                                                            </path>
+                                                                                            <path class="a"
+                                                                                                d="M24.6,6.57A8.35,8.35,0,0,1,30,8.24">
+                                                                                            </path>
+                                                                                        </g>
+                                                                                    </svg>
                                                                                 </div>
-                                                                                <span>Enviar</span>
-                                                                            </button>
-                                                                        </div>
+                                                                            </div>
+                                                                            <span>Enviar</span>
+                                                                        </button>
                                                                     </div>
+                                                                </div>
 
-                                                                    <div id="message"
-                                                                        style="width: 100%; text-align: center; margin-top: 15px; font-weight: bold; min-height: 20px;">
-                                                                    </div>
-                                                                </form>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
-                                                <div class="RightFormulario">
-                                                    <img loading="lazy" src="https://i.ibb.co/fGppd2dC/Pink-Right.png"
-                                                        alt="Derecha" border="0" class="ImagenDerecha">
-                                                </div>
-
+                                                                <div id="message"
+                                                                    style="width: 100%; text-align: center; margin-top: 15px; font-weight: bold; min-height: 20px;">
+                                                                </div>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                </table>
                                             </div>
                                         </div>
-                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -2886,6 +2882,9 @@
                                                 <br> Les recordamos que, para poder acceder al recinto, cada invitado
                                                 deberá figurar en nuestra lista de confirmados.
                                             </p>
+                                            <div class="PusheenDiv" style="text-align: right;">
+                                                <img class="" src="./Angry.gif" alt="" style="width: 15%;">
+                                            </div>
                                         </div>
 
                                         <div class="faq-item" onclick="toggleFaq(this)">
@@ -2900,6 +2899,9 @@
                                                 <br>Esperamos que esto les permita disfrutar plenamente del festejo con
                                                 nosotros.
                                             </p>
+                                            <div class="PusheenDiv" style="text-align: right;">
+                                                <img class="" src="./Angry.gif" alt="" style="width: 15%;">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -2956,7 +2958,7 @@
                                         <div class="card-front FichaContacto">
                                             <p class="TextoContacto" style="padding-top: 9%;">Eduardo
                                             </p>
-                                            <img loading="lazy" class="NekoIMG" src="/Neko1.png" alt="">
+                                            <img loading="lazy" class="NekoIMG" src="./Wine1.gif" alt="">
                                         </div>
                                         <!-- Dorso -->
                                         <div class="card-back FichaContacto">
@@ -2979,7 +2981,7 @@
                                         <div class="card-front FichaContacto">
                                             <p class="TextoContacto" style="padding-top: 9%;">Karla
                                             </p>
-                                            <img loading="lazy" class="NekoIMG" src="/Neko2.png" alt="">
+                                            <img loading="lazy" class="NekoIMG" src="./Wine2.gif" alt="">
                                         </div>
                                         <div class="card-back FichaContacto">
                                             <p class="TextoContactoCards">👰🏽‍♀️ Karla *nunca me llames por mi segundo
